@@ -21,7 +21,6 @@ require.config( {
     text: '../../sherpa/lib/text-2.0.12',
 
     // PhET plugins
-    audio: '../../chipper/js/requirejs-plugins/audio',
     image: '../../chipper/js/requirejs-plugins/image',
     mipmap: '../../chipper/js/requirejs-plugins/mipmap',
     string: '../../chipper/js/requirejs-plugins/string',
@@ -43,8 +42,6 @@ require.config( {
     SUN: '../../sun/js',
     TANDEM: '../../tandem/js',
     TWIXT: '../../twixt/js',
-    VEGAS: '../../vegas/js',
-    VIBE: '../../vibe/js',
 
     // this sim
     FUNCTION_BASICS: '.'
