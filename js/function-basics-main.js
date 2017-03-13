@@ -10,7 +10,7 @@ define( function( require ) {
 
   // modules
   var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
-  var MysteryScreen = require( 'FUNCTION_BUILDER/mystery/MysteryScreen' );
+  var MysteryScreen = require( 'FUNCTION_BASICS/mystery/MysteryScreen' );
   var PatternsScreen = require( 'FUNCTION_BUILDER/patterns/PatternsScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
