@@ -18,6 +18,7 @@
       "../sherpa/lib/Tween-r12.js"
     ],
     "phetLibs": [
+      "function-builder",
       "twixt"
     ]
   }
