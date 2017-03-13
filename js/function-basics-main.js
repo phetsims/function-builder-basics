@@ -18,7 +18,7 @@ define( function( require ) {
   var Tandem = require( 'TANDEM/Tandem' );
 
   // strings
-  var functionBuilderTitleString = require( 'string!FUNCTION_BUILDER/function-builder.title' );
+  var functionBasicsTitleString = require( 'string!FUNCTION_BASICS/function-basics.title' );
 
   // constants
   var tandem = Tandem.createRootTandem();
@@ -43,7 +43,7 @@ define( function( require ) {
       screens.push( new TestScreen() );
     }
 
-    var sim = new Sim( functionBuilderTitleString, screens, options );
+    var sim = new Sim( functionBasicsTitleString, screens, options );
     sim.start();
   } );
 } );
