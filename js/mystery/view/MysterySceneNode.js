@@ -9,16 +9,20 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var CardContainer = require( 'FUNCTION_BUILDER/common/view/containers/CardContainer' );
   var EyeToggleButton = require( 'SCENERY_PHET/buttons/EyeToggleButton' );
   var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
   var FBFont = require( 'FUNCTION_BUILDER/common/FBFont' );
   var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
   var FontAwesomeNode = require( 'SUN/FontAwesomeNode' );
   var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
+  var ImageCard = require( 'FUNCTION_BUILDER/common/model/cards/ImageCard' );
+  var ImageCardNode = require( 'FUNCTION_BUILDER/common/view/cards/ImageCardNode' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PatternsSceneNode = require( 'FUNCTION_BUILDER/patterns/view/PatternsSceneNode' );
+  var MysteryFunctionNode = require( 'FUNCTION_BASICS/mystery/view/MysteryFunctionNode' );
   var Property = require( 'AXON/Property' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
+  var SceneNode = require( 'FUNCTION_BUILDER/common/view/SceneNode' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
@@ -46,7 +50,7 @@ define( function( require ) {
 
     var self = this;
 
-    PatternsSceneNode.call( this, scene, layoutBounds, options );
+    SceneNode.call( this, scene, layoutBounds, MysteryFunctionNode, options );
 
     // Toggle buttons below each builder slot, for revealing identity of functions
     this.revealProperties = [];  // {Property.<boolean>[]}
@@ -135,15 +139,32 @@ define( function( require ) {
 
   functionBasics.register( 'MysterySceneNode', MysterySceneNode );
 
-  return inherit( PatternsSceneNode, MysterySceneNode, {
+  return inherit( SceneNode, MysterySceneNode, {
 
     /**
      * @public
      * @override
      */
     reset: function() {
-      PatternsSceneNode.prototype.reset.call( this );
+      SceneNode.prototype.reset.call( this );
       this.resetChallengeControls();
+    },
+
+    /**
+     * Creates the card containers that go in the input and output carousels.
+     *
+     * @param {Scene} scene
+     * @param {Object} [containerOptions] - see CardContainer options
+     * @returns {CardContainer[]}
+     * @protected
+     * @override
+     */
+    createCardContainers: function( scene, containerOptions ) {
+      var containers = [];
+      scene.cardContent.forEach( function( cardImage ) {
+        containers.push( new CardContainer( ImageCard, ImageCardNode, cardImage, containerOptions ) );
+      } );
+      return containers;
     },
 
     /**
@@ -177,7 +198,7 @@ define( function( require ) {
      * @override
      */
     completeInitialization: function() {
-      PatternsSceneNode.prototype.completeInitialization.call( this );
+      SceneNode.prototype.completeInitialization.call( this );
       this.updateChallenge();
     },
 
