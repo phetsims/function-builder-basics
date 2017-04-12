@@ -31,13 +31,15 @@ define( function( require ) {
     options = _.extend( {
       size: FBConstants.FUNCTION_SIZE,
       identityVisible: false, // function's identity is not initially visible
-      draggable: false // {boolean} Mystery functions are not draggable
+      draggable: false, // {boolean} Mystery functions are not draggable
+      mysteryCharacterColor: 'black' // color of the '?'
     }, options );
 
     // Node that is displayed when the function's identity is hidden
     assert && assert( !options.hiddenNode );
     options.hiddenNode = new Text( mysteryCharacterString, {
       font: FBConstants.MYSTERY_FUNCTION_FONT,
+      fill: options.mysteryCharacterColor,
       maxWidth: 0.35 * options.size.width,
       maxHeight: 0.9 * options.size.height
     } );
