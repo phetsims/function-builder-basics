@@ -232,10 +232,10 @@ define( function( require ) {
      */
     getFunctionNode: function( functionConstructor ) {
 
-      // get the container that has functions for this constructor
+      // get the container that has functions of the specified type
       var functionContainer = null;
       for ( var i = 0; i < this.functionContainers.length && !functionContainer; i++ ) {
-        if ( this.functionContainers[ i ].functionCreator.functionConstructor === functionConstructor ) {
+        if ( this.functionContainers[ i ].getFunctionConstructor() === functionConstructor ) {
           functionContainer = this.functionContainers[ i ];
         }
       }
