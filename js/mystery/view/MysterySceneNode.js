@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var CardContainer = require( 'FUNCTION_BUILDER/common/view/containers/CardContainer' );
+  var Color = require( 'SCENERY/util/Color' );
   var EyeToggleButton = require( 'SCENERY_PHET/buttons/EyeToggleButton' );
   var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
   var FBFont = require( 'FUNCTION_BUILDER/common/FBFont' );
@@ -133,6 +134,9 @@ define( function( require ) {
       self.seeInsideCheckBox.enabled = self.seeInsideCheckBox.enabled || ( numberOfCards === 1 );
     } );
 
+    // @private colors for the '?' on function nodes
+    this.questionMarkColors = phet.joist.random.shuffle( FBColors.QUESTION_MARK_COLORS );
+
     // @private
     this.scene = scene;
   }
@@ -209,21 +213,22 @@ define( function( require ) {
      */
     updateChallenge: function() {
 
-      var self = this;
-
       this.resetCarousels();
       this.builderNode.reset();
       this.resetFunctions();
       this.resetCards();
 
-      var challenge = self.scene.challengeProperty.get(); // {constructor[]}
+      var functionConstructors = this.scene.challengeProperty.get(); // {constructor[]}
 
       // transfer functions from carousel to builder, configured to match the challenge
       var slotNumber = 0;
-      challenge.forEach( function( functionConstructor ) {
+      for ( var i = 0; i < functionConstructors.length; i++ ) {
 
         // get a function node from the carousel
-        var functionNode = self.getFunctionNode( functionConstructor );
+        var functionNode = this.getFunctionNode( functionConstructors[ i ] );
+
+        // change the color of its question mark
+        functionNode.setHiddenNodeColor( this.getNextQuestionMarkColor() );
 
         // move the function to the builder
         functionNode.moveToBuilder( slotNumber );
@@ -232,17 +237,17 @@ define( function( require ) {
         functionNode.identityVisibleProperty.set( false );
 
         slotNumber++;
-      } );
+      }
 
       // Resets controls that need to be reset each time the challenge changes.
       this.resetChallengeControls();
 
       // show the answer for debugging
-      self.answerNode.text = 'TODO'; //TODO
-      self.answerNode.centerX = this.builderNode.centerX;
+      this.answerNode.text = 'TODO'; //TODO
+      this.answerNode.centerX = this.builderNode.centerX;
 
       if ( FBQueryParameters.populateOutput ) {
-        self.populateOutputCarousel();
+        this.populateOutputCarousel();
       }
     },
 
@@ -265,6 +270,26 @@ define( function( require ) {
 
       // get the first item in the container
       return functionContainer.getContents()[ 0 ];
+    },
+
+    /**
+     * Gets the next question mark color.
+     * @returns {Color|string}
+     */
+    getNextQuestionMarkColor: function() {
+      var questionMarkColor = this.questionMarkColors[ 0 ];
+      this.questionMarkColors.splice( 0, 1 );
+      if ( this.questionMarkColors.length === 0 ) {
+
+        // replenish the colors
+        this.questionMarkColors = phet.joist.random.shuffle( FBColors.QUESTION_MARK_COLORS );
+
+        // if the first color is the same as the one we just selected, remove it
+        if ( Color.toColor( this.questionMarkColors[ 0 ] ).equals( Color.toColor( questionMarkColor ) ) ) {
+          this.questionMarkColors.splice( 0, 1 );
+        }
+      }
+      return questionMarkColor;
     }
   } );
 } );

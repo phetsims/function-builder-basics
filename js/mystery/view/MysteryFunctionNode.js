@@ -32,23 +32,33 @@ define( function( require ) {
       size: FBConstants.FUNCTION_SIZE,
       identityVisible: false, // function's identity is not initially visible
       draggable: false, // {boolean} Mystery functions are not draggable
-      hiddenFill: 'white', // {Color|string} fill when identity is hidden
-      mysteryCharacterColor: 'black' // color of the '?'
+      hiddenFill: 'white' // {Color|string} fill when identity is hidden
     }, options );
 
     // Node that is displayed when the function's identity is hidden
     assert && assert( !options.hiddenNode );
     options.hiddenNode = new Text( mysteryCharacterString, {
       font: FBConstants.MYSTERY_FUNCTION_FONT,
-      fill: options.mysteryCharacterColor,
       maxWidth: 0.35 * options.size.width,
       maxHeight: 0.9 * options.size.height
     } );
 
     ImageFunctionNode.call( this, functionInstance, container, builderNode, dragLayer, options );
+
+    // @private
+    this.hiddenNode = options.hiddenNode;
   }
 
   functionBasics.register( 'MysteryFunctionNode', MysteryFunctionNode );
 
-  return inherit( ImageFunctionNode, MysteryFunctionNode );
+  return inherit( ImageFunctionNode, MysteryFunctionNode, {
+
+    /**
+     * Sets the color of the question mark.
+     * @param {Color|string} color
+     */
+    setHiddenNodeColor: function( color ) {
+      this.hiddenNode.fill = color;
+    }
+  } );
 } );
