@@ -32,6 +32,7 @@ define( function( require ) {
       size: FBConstants.FUNCTION_SIZE,
       identityVisible: false, // function's identity is not initially visible
       draggable: false, // {boolean} Mystery functions are not draggable
+      hiddenFill: 'white', // {Color|string} fill when identity is hidden
       mysteryCharacterColor: 'black' // color of the '?'
     }, options );
 
