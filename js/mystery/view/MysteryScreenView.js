@@ -12,7 +12,7 @@ define( function( require ) {
   var FBScreenView = require( 'FUNCTION_BUILDER/common/view/FBScreenView' );
   var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MysterySceneNode = require( 'FUNCTION_BUILDER/mystery/view/MysterySceneNode' );
+  var MysterySceneNode = require( 'FUNCTION_BASICS/mystery/view/MysterySceneNode' );
 
   /**
    * @param {MysteryModel} model

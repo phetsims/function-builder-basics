@@ -12,8 +12,8 @@ define( function( require ) {
   var FBModel = require( 'FUNCTION_BUILDER/common/model/FBModel' );
   var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MysteryChallenges = require( 'FUNCTION_BUILDER/mystery/model/MysteryChallenges' );
-  var MysteryScene = require( 'FUNCTION_BUILDER/mystery/model/MysteryScene' );
+  var MysteryChallenges = require( 'FUNCTION_BASICS/mystery/model/MysteryChallenges' );
+  var MysteryScene = require( 'FUNCTION_BASICS/mystery/model/MysteryScene' );
 
   /**
    * @constructor
