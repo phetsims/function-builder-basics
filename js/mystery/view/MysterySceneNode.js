@@ -279,7 +279,6 @@ define( function( require ) {
       return functionContainer.getContents()[ 0 ];
     },
 
-    //TODO we won't have the same consecutive color, but we could have the same color twice in a 3-function challenge
     /**
      * Gets the next question mark color.
      * @returns {Color|string}
@@ -292,6 +291,7 @@ define( function( require ) {
         // replenish the colors
         this.questionMarkColors = phet.joist.random.shuffle( FBColors.QUESTION_MARK_COLORS );
 
+        //TODO we won't have the same consecutive color, but we could have the same color twice in a 3-function challenge
         // if the first color is the same as the one we just selected, remove it
         if ( Color.toColor( this.questionMarkColors[ 0 ] ).equals( Color.toColor( questionMarkColor ) ) ) {
           this.questionMarkColors.splice( 0, 1 );
