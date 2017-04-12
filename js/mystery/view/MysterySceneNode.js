@@ -222,6 +222,7 @@ define( function( require ) {
 
       // transfer functions from carousel to builder, configured to match the challenge
       var slotNumber = 0;
+      var answerText = '';
       for ( var i = 0; i < functionConstructors.length; i++ ) {
 
         // get a function node from the carousel
@@ -236,6 +237,12 @@ define( function( require ) {
         // hide the function's identity
         functionNode.identityVisibleProperty.set( false );
 
+        // add to answer text 
+        answerText += functionNode.functionInstance.name;
+        if ( i < functionConstructors.length - 1 ) {
+          answerText += ' > ';
+        }
+
         slotNumber++;
       }
 
@@ -243,7 +250,7 @@ define( function( require ) {
       this.resetChallengeControls();
 
       // show the answer for debugging
-      this.answerNode.text = 'TODO'; //TODO
+      this.answerNode.text = answerText;
       this.answerNode.centerX = this.builderNode.centerX;
 
       if ( FBQueryParameters.populateOutput ) {
@@ -272,6 +279,7 @@ define( function( require ) {
       return functionContainer.getContents()[ 0 ];
     },
 
+    //TODO we won't have the same consecutive color, but we could have the same color twice in a 3-function challenge
     /**
      * Gets the next question mark color.
      * @returns {Color|string}
