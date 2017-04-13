@@ -10,7 +10,6 @@ define( function( require ) {
 
   // modules
   var CardContainer = require( 'FUNCTION_BUILDER/common/view/containers/CardContainer' );
-  var Color = require( 'SCENERY/util/Color' );
   var EyeToggleButton = require( 'SCENERY_PHET/buttons/EyeToggleButton' );
   var FBBMysteryFunctionNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysteryFunctionNode' );
   var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
