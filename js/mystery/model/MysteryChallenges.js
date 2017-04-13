@@ -30,8 +30,8 @@ define( function( require ) {
 
     // {constructor[][]} 1-function challenges
     POOL1: [
-      [ Grayscale ], // selected on startup and reset
-      [ Erase ],
+      [ Erase ], // selected on startup and reset
+      [ Grayscale ],
       [ Identity ],
       [ InvertRGB ],
       [ Mirror ],
@@ -43,14 +43,58 @@ define( function( require ) {
 
     // {constructor[][]} 2-function challenges
     POOL2: [
-      [ Grayscale, Rotate90 ], // selected on startup and reset
-      [ InvertRGB, Rotate180 ]
+      [ Rotate180, Shrink ], // selected on startup and reset
+      [ Mirror, Mirror ],
+      [ Rotate90, Rotate90 ],
+      [ Rotate180, Rotate180 ],
+      [ InvertRGB, InvertRGB ],
+      [ Warhol, Warhol ],
+      [ Mirror, Rotate180 ],
+      [ Mirror, Erase ],
+      [ Mirror, Shrink ],
+      [ Rotate90, Rotate180 ],
+      [ Rotate90, Identity ],
+      [ Rotate90, InvertRGB ],
+      [ Rotate90, Shrink ],
+      [ Rotate90, Warhol ],
+      [ Grayscale, Rotate180 ],
+      [ Grayscale, Identity ],
+      [ Grayscale, InvertRGB ],
+      [ Grayscale, Warhol ],
+      [ Rotate180, InvertRGB ],
+      [ Rotate180, Erase ],
+      [ Identity, InvertRGB ],
+      [ Identity, Shrink ],
+      [ Identity, Warhol ],
+      [ InvertRGB, Shrink ],
+      [ InvertRGB, Warhol ],
+      [ Shrink, Warhol ]
     ],
 
     // {constructor[][]} 3-function challenges
     POOL3: [
-      [ Grayscale, Rotate90, Shrink ], // selected on startup and reset
-      [ InvertRGB, Rotate180, Mirror ]
+      [ Rotate90, Grayscale, Warhol ], // selected on startup and reset
+      [ Mirror, Rotate90, Mirror ],
+      [ Mirror, Grayscale, Erase ],
+      [ Mirror, Grayscale, Shrink ],
+      [ Mirror, Rotate180, InvertRGB ],
+      [ Mirror, Identity, Warhol ],
+      [ Rotate90, Rotate90, Rotate180 ],
+      [ Rotate90, Identity, InvertRGB ],
+      [ Rotate90, InvertRGB, Shrink ],
+      [ Rotate90, Grayscale, Rotate180 ],
+      [ Grayscale, Identity, InvertRGB ],
+      [ Grayscale, Identity, Erase ],
+      [ Rotate180, Warhol, Rotate180 ],
+      [ Rotate180, Mirror, Shrink ],
+      [ Rotate180, Shrink, Warhol ],
+      [ Identity, Mirror, InvertRGB ],
+      [ InvertRGB, Rotate180, Identity ],
+      [ InvertRGB, Warhol, Rotate90 ],
+      [ Erase, Rotate90, Rotate90 ],
+      [ Shrink, Grayscale, Shrink ],
+      [ Shrink, InvertRGB, Warhol ],
+      [ Warhol, Shrink, Warhol ]
     ]
   };
 
