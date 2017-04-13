@@ -220,6 +220,8 @@ define( function( require ) {
 
       var functionConstructors = this.scene.challengeProperty.get(); // {constructor[]}
 
+      var questionMarkColors = this.getQuestionMarkColors( this.scene.builder.numberOfSlots );
+
       // transfer functions from carousel to builder, configured to match the challenge
       var slotNumber = 0;
       var answerText = '';
@@ -229,7 +231,7 @@ define( function( require ) {
         var functionNode = this.getFunctionNode( functionConstructors[ i ] );
 
         // change the color of its question mark
-        functionNode.setHiddenNodeColor( this.getNextQuestionMarkColor() );
+        functionNode.setHiddenNodeColor( questionMarkColors[ i ] );
 
         // move the function to the builder
         functionNode.moveToBuilder( slotNumber );
@@ -280,24 +282,38 @@ define( function( require ) {
     },
 
     /**
-     * Gets the next question mark color.
-     * @returns {Color|string}
+     * Gets a set of question mark colors, containing no duplicates.
+     * @param {number} numberOfColors
+     * @returns {Color[]|string[]}
      */
-    getNextQuestionMarkColor: function() {
-      var questionMarkColor = this.questionMarkColors[ 0 ];
-      this.questionMarkColors.splice( 0, 1 );
-      if ( this.questionMarkColors.length === 0 ) {
+    getQuestionMarkColors: function( numberOfColors ) {
+
+      assert && assert( numberOfColors <= FBColors.QUESTION_MARK_COLORS.length );
+
+      var colors = [];
+      while ( colors.length < numberOfColors ) {
+
+        // remove first color from the pool
+        var color = this.questionMarkColors[ 0 ];
+        this.questionMarkColors.splice( 0, 1 );
+
+        // prevent duplicate colors
+        if ( colors.indexOf( color ) === -1 ) {
+          colors.push( color );
+        }
 
         // replenish the colors
-        this.questionMarkColors = phet.joist.random.shuffle( FBColors.QUESTION_MARK_COLORS );
+        if ( this.questionMarkColors.length === 0 ) {
+          this.questionMarkColors = phet.joist.random.shuffle( FBColors.QUESTION_MARK_COLORS );
 
-        //TODO we won't have the same consecutive color, but we could have the same color twice in a 3-function challenge
-        // if the first color is the same as the one we just selected, remove it
-        if ( Color.toColor( this.questionMarkColors[ 0 ] ).equals( Color.toColor( questionMarkColor ) ) ) {
-          this.questionMarkColors.splice( 0, 1 );
+          // prevent choosing the same color consecutively
+          if ( this.questionMarkColors[0] === color ) {
+            this.questionMarkColors.splice( 0, 1 ); 
+          }
         }
       }
-      return questionMarkColor;
+      assert && assert( colors.length === numberOfColors );
+      return colors;
     }
   } );
 } );
