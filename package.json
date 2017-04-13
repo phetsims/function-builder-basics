@@ -1,17 +1,17 @@
 {
-  "name": "function-basics",
+  "name": "function-builder-basics",
   "version": "1.0.0-dev.1",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/phetsims/function-basics.git"
+    "url": "https://github.com/phetsims/function-builder-basics.git"
   },
   "devDependencies": {
     "grunt": "~1.0.0",
     "grunt-eslint": "~19.0.0"
   },
   "phet": {
-    "requirejsNamespace": "FUNCTION_BASICS",
+    "requirejsNamespace": "FUNCTION_BUILDER_BASICS",
     "preload": [
       "../sherpa/lib/BigInteger-cda5bcc.js",
       "../sherpa/lib/BigRational-8f8c2fa.js",
