@@ -12,6 +12,7 @@ define( function( require ) {
   var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
   var MysteryScreen = require( 'FUNCTION_BASICS/mystery/MysteryScreen' );
   var PatternsScreen = require( 'FUNCTION_BUILDER/patterns/PatternsScreen' );
+  var Property = require( 'AXON/Property' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
   var TestScreen = require( 'FUNCTION_BUILDER/test/TestScreen' );
@@ -35,7 +36,9 @@ define( function( require ) {
   SimLauncher.launch( function() {
 
     var screens = [
-      new PatternsScreen( tandem.createTandem( 'patternsScreen' ) ),
+      new PatternsScreen( tandem.createTandem( 'patternsScreen' ), {
+        backgroundColorProperty: new Property( '#E1F7FF' )
+      } ),
       new MysteryScreen( tandem.createTandem( 'mysteryScreen' ) )
     ];
 
