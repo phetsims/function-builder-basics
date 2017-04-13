@@ -10,7 +10,7 @@ define( function( require ) {
 
   // modules
   var FBConstants = require( 'FUNCTION_BUILDER/common/FBConstants' );
-  var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
+  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   var ImageFunctionNode = require( 'FUNCTION_BUILDER/common/view/functions/ImageFunctionNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -49,7 +49,7 @@ define( function( require ) {
     this.hiddenNode = options.hiddenNode;
   }
 
-  functionBasics.register( 'MysteryFunctionNode', MysteryFunctionNode );
+  functionBuilderBasics.register( 'MysteryFunctionNode', MysteryFunctionNode );
 
   return inherit( ImageFunctionNode, MysteryFunctionNode, {
 

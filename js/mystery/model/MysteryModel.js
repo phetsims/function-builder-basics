@@ -10,10 +10,10 @@ define( function( require ) {
 
   // modules
   var FBModel = require( 'FUNCTION_BUILDER/common/model/FBModel' );
-  var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
+  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MysteryChallenges = require( 'FUNCTION_BASICS/mystery/model/MysteryChallenges' );
-  var MysteryScene = require( 'FUNCTION_BASICS/mystery/model/MysteryScene' );
+  var MysteryChallenges = require( 'FUNCTION_BUILDER_BASICS/mystery/model/MysteryChallenges' );
+  var MysteryScene = require( 'FUNCTION_BUILDER_BASICS/mystery/model/MysteryScene' );
 
   /**
    * @constructor
@@ -26,7 +26,7 @@ define( function( require ) {
     ] );
   }
 
-  functionBasics.register( 'MysteryModel', MysteryModel );
+  functionBuilderBasics.register( 'MysteryModel', MysteryModel );
 
   return inherit( FBModel, MysteryModel );
 } );

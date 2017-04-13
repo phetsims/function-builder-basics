@@ -10,7 +10,7 @@ define( function( require ) {
 
   // modules
   var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
-  var MysteryScreen = require( 'FUNCTION_BASICS/mystery/MysteryScreen' );
+  var MysteryScreen = require( 'FUNCTION_BUILDER_BASICS/mystery/MysteryScreen' );
   var PatternsScreen = require( 'FUNCTION_BUILDER/patterns/PatternsScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
@@ -18,7 +18,7 @@ define( function( require ) {
   var Tandem = require( 'TANDEM/Tandem' );
 
   // strings
-  var functionBasicsTitleString = require( 'string!FUNCTION_BASICS/function-basics.title' );
+  var functionBuilderBasicsTitleString = require( 'string!FUNCTION_BUILDER_BASICS/function-builder-basics.title' );
 
   // constants
   var tandem = Tandem.createRootTandem();
@@ -43,7 +43,7 @@ define( function( require ) {
       screens.push( new TestScreen() );
     }
 
-    var sim = new Sim( functionBasicsTitleString, screens, options );
+    var sim = new Sim( functionBuilderBasicsTitleString, screens, options );
     sim.start();
   } );
 } );

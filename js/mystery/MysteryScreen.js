@@ -13,10 +13,10 @@ define( function( require ) {
   // modules
   var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
   var FBIconFactory = require( 'FUNCTION_BUILDER/common/view/FBIconFactory' );
-  var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
+  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MysteryModel = require( 'FUNCTION_BASICS/mystery/model/MysteryModel' );
-  var MysteryScreenView = require( 'FUNCTION_BASICS/mystery/view/MysteryScreenView' );
+  var MysteryModel = require( 'FUNCTION_BUILDER_BASICS/mystery/model/MysteryModel' );
+  var MysteryScreenView = require( 'FUNCTION_BUILDER_BASICS/mystery/view/MysteryScreenView' );
   var Property = require( 'AXON/Property' );
   var Screen = require( 'JOIST/Screen' );
 
@@ -45,7 +45,7 @@ define( function( require ) {
       options );
   }
 
-  functionBasics.register( 'MysteryScreen', MysteryScreen );
+  functionBuilderBasics.register( 'MysteryScreen', MysteryScreen );
 
   return inherit( Screen, MysteryScreen );
 } );

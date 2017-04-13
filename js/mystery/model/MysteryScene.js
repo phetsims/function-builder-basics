@@ -14,8 +14,8 @@ define( function( require ) {
   var FBConstants = require( 'FUNCTION_BUILDER/common/FBConstants' );
   var FBIconFactory = require( 'FUNCTION_BUILDER/common/view/FBIconFactory' );
   var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
+  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   var FunctionCreator = require( 'FUNCTION_BUILDER/common/model/functions/FunctionCreator' );
-  var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
   var inherit = require( 'PHET_CORE/inherit' );
   var MysteryChallenges = require( 'FUNCTION_BUILDER/mystery/model/MysteryChallenges' );
   var Property = require( 'AXON/Property' );
@@ -139,7 +139,7 @@ define( function( require ) {
     Scene.call( this, cardContent, functionCreators, builder, options );
   }
 
-  functionBasics.register( 'MysteryScene', MysteryScene );
+  functionBuilderBasics.register( 'MysteryScene', MysteryScene );
 
   return inherit( Scene, MysteryScene, {
 

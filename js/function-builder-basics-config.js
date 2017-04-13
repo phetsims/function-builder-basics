@@ -9,7 +9,7 @@ require.config( {
 
   // An array of dependencies to load. Useful when require is defined as a config object before require.js
   // is loaded, and you want to specify dependencies to load as soon as require() is defined.
-  deps: [ 'function-basics-main' ],
+  deps: [ 'function-builder-basics-main' ],
 
   // baseUrl: don't bother trying to set it here, it is overridden by data-main in the top-level HTML file
 
@@ -44,7 +44,7 @@ require.config( {
     TWIXT: '../../twixt/js',
 
     // this sim
-    FUNCTION_BASICS: '.'
+    FUNCTION_BUILDER_BASICS: '.'
   },
 
   // optional cache buster to make browser refresh load all included scripts, can be disabled with ?cacheBuster=false

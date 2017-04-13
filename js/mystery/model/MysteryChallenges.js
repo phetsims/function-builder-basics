@@ -9,7 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
+  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   
   // function modules
   var Erase = require( 'FUNCTION_BUILDER/patterns/model/functions/Erase' );
@@ -98,7 +98,7 @@ define( function( require ) {
     ]
   };
 
-  functionBasics.register( 'MysteryChallenges', MysteryChallenges );
+  functionBuilderBasics.register( 'MysteryChallenges', MysteryChallenges );
 
   return MysteryChallenges;
 } );

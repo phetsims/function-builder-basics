@@ -10,9 +10,9 @@ define( function( require ) {
 
   // modules
   var FBScreenView = require( 'FUNCTION_BUILDER/common/view/FBScreenView' );
-  var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
+  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MysterySceneNode = require( 'FUNCTION_BASICS/mystery/view/MysterySceneNode' );
+  var MysterySceneNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/MysterySceneNode' );
 
   /**
    * @param {MysteryModel} model
@@ -28,7 +28,7 @@ define( function( require ) {
     FBScreenView.call( this, model, MysterySceneNode, options );
   }
 
-  functionBasics.register( 'MysteryScreenView', MysteryScreenView );
+  functionBuilderBasics.register( 'MysteryScreenView', MysteryScreenView );
 
   return inherit( FBScreenView, MysteryScreenView );
 } );

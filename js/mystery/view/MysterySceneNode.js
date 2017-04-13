@@ -16,11 +16,11 @@ define( function( require ) {
   var FBFont = require( 'FUNCTION_BUILDER/common/FBFont' );
   var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
   var FontAwesomeNode = require( 'SUN/FontAwesomeNode' );
-  var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
+  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   var ImageCard = require( 'FUNCTION_BUILDER/common/model/cards/ImageCard' );
   var ImageCardNode = require( 'FUNCTION_BUILDER/common/view/cards/ImageCardNode' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MysteryFunctionNode = require( 'FUNCTION_BASICS/mystery/view/MysteryFunctionNode' );
+  var MysteryFunctionNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/MysteryFunctionNode' );
   var Property = require( 'AXON/Property' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var SceneNode = require( 'FUNCTION_BUILDER/common/view/SceneNode' );
@@ -141,7 +141,7 @@ define( function( require ) {
     this.scene = scene;
   }
 
-  functionBasics.register( 'MysterySceneNode', MysterySceneNode );
+  functionBuilderBasics.register( 'MysterySceneNode', MysterySceneNode );
 
   return inherit( SceneNode, MysterySceneNode, {
 
