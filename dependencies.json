@@ -1,5 +1,5 @@
 {
-  "comment": "# function-basics 1.0.0-dev.1 Wed Apr 12 2017 18:34:05 GMT-0600 (MDT)",
+  "comment": "# function-basics 1.0.0-dev.1 Wed Apr 12 2017 18:40:46 GMT-0600 (MDT)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
     "branch": "master"
@@ -21,7 +21,7 @@
     "branch": "master"
   },
   "function-basics": {
-    "sha": "10b39ddf5a6ab9a91f584eac8554d51177a955fd",
+    "sha": "5b8fdad75ea3eb6651deb97e48f76fbcf82219b9",
     "branch": "master"
   },
   "function-builder": {
