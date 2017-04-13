@@ -13,7 +13,6 @@ define( function( require ) {
   // modules
   var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
   var FBFont = require( 'FUNCTION_BUILDER/common/FBFont' );
-  var FBIconFactory = require( 'FUNCTION_BUILDER/common/view/FBIconFactory' );
   var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
   var FunctionBackgroundNode = require( 'FUNCTION_BUILDER/common/view/functions/FunctionBackgroundNode' );
   var inherit = require( 'PHET_CORE/inherit' );
