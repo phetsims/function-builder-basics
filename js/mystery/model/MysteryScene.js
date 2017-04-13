@@ -1,7 +1,7 @@
 // Copyright 2017, University of Colorado Boulder
 
 /**
- * A scene in the 'Mystery' screen in 'SIM_NAME'.
+ * A scene in the 'Mystery' screen in 'Function Builder: Basics'.
  * This Mystery screen deals with Pattern (image) cards and functions.
  *
  * @author Chris Malley (PixelZoom, Inc.)

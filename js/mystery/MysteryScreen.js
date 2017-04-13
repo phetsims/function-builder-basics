@@ -1,9 +1,9 @@
 // Copyright 2017, University of Colorado Boulder
 
 /**
- * The 'Mystery' screen in 'SIM_NAME'.
+ * The 'Mystery' screen in 'Function Builder: Basics'.
  * This screen differs significantly from the Mystery screen in Function Builder.
- * Instead of numeric cards and functions, this Mystery screen use pattern (image) cards and functions.
+ * Instead of numeric cards and functions, this Mystery screen uses pattern (image) cards and functions.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

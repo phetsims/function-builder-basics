@@ -1,7 +1,7 @@
 // Copyright 2017, University of Colorado Boulder
 
 /**
- * Model for the 'Mystery' screen in 'SIM_NAME'.
+ * Model for the 'Mystery' screen in 'Function Builder: Basics'.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

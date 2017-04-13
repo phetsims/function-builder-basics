@@ -1,7 +1,7 @@
 // Copyright 2015-2016, University of Colorado Boulder
 
 /**
- * Main entry point for the 'SIM_NAME' sim.
+ * Main entry point for the 'Function Builder: Basics' sim.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
