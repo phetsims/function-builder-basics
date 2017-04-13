@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var FBIconFactory = require( 'FUNCTION_BUILDER/common/view/FBIconFactory' );
   var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
   var MysteryScreen = require( 'FUNCTION_BASICS/mystery/MysteryScreen' );
   var PatternsScreen = require( 'FUNCTION_BUILDER/patterns/PatternsScreen' );
@@ -23,6 +24,7 @@ define( function( require ) {
 
   // constants
   var tandem = Tandem.createRootTandem();
+  var SCREEN_COLOR = '#E1F7FF'; // see issue #12
 
   var options = {
     credits: {
@@ -37,7 +39,8 @@ define( function( require ) {
 
     var screens = [
       new PatternsScreen( tandem.createTandem( 'patternsScreen' ), {
-        backgroundColorProperty: new Property( '#E1F7FF' )  // see issue #12
+        backgroundColorProperty: new Property( SCREEN_COLOR ),
+        homeScreenIcon: FBIconFactory.createPatternsScreenIcon( { fill: SCREEN_COLOR } )
       } ),
       new MysteryScreen( tandem.createTandem( 'mysteryScreen' ) )
     ];
