@@ -57,7 +57,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function MysteryScene( challengePool, options ) {
+  function FBBMysteryScene( challengePool, options ) {
 
     options = _.extend( {
       functionsPerChallenge: 1,
@@ -139,9 +139,9 @@ define( function( require ) {
     Scene.call( this, cardContent, functionCreators, builder, options );
   }
 
-  functionBuilderBasics.register( 'MysteryScene', MysteryScene );
+  functionBuilderBasics.register( 'FBBMysteryScene', FBBMysteryScene );
 
-  return inherit( Scene, MysteryScene, {
+  return inherit( Scene, FBBMysteryScene, {
 
     /**
      * Resets the scene.

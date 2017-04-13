@@ -12,6 +12,7 @@ define( function( require ) {
   var CardContainer = require( 'FUNCTION_BUILDER/common/view/containers/CardContainer' );
   var Color = require( 'SCENERY/util/Color' );
   var EyeToggleButton = require( 'SCENERY_PHET/buttons/EyeToggleButton' );
+  var FBBMysteryFunctionNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysteryFunctionNode' );
   var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
   var FBFont = require( 'FUNCTION_BUILDER/common/FBFont' );
   var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
@@ -20,7 +21,6 @@ define( function( require ) {
   var ImageCard = require( 'FUNCTION_BUILDER/common/model/cards/ImageCard' );
   var ImageCardNode = require( 'FUNCTION_BUILDER/common/view/cards/ImageCardNode' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MysteryFunctionNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/MysteryFunctionNode' );
   var Property = require( 'AXON/Property' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var SceneNode = require( 'FUNCTION_BUILDER/common/view/SceneNode' );
@@ -33,7 +33,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function MysterySceneNode( scene, layoutBounds, options ) {
+  function FBBMysterySceneNode( scene, layoutBounds, options ) {
 
     options = _.extend( {
 
@@ -51,7 +51,7 @@ define( function( require ) {
 
     var self = this;
 
-    SceneNode.call( this, scene, layoutBounds, MysteryFunctionNode, options );
+    SceneNode.call( this, scene, layoutBounds, FBBMysteryFunctionNode, options );
 
     // Toggle buttons below each builder slot, for revealing identity of functions
     this.revealProperties = [];  // {Property.<boolean>[]}
@@ -141,9 +141,9 @@ define( function( require ) {
     this.scene = scene;
   }
 
-  functionBuilderBasics.register( 'MysterySceneNode', MysterySceneNode );
+  functionBuilderBasics.register( 'FBBMysterySceneNode', FBBMysterySceneNode );
 
-  return inherit( SceneNode, MysterySceneNode, {
+  return inherit( SceneNode, FBBMysterySceneNode, {
 
     /**
      * @public

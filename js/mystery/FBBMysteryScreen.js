@@ -11,12 +11,12 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var FBBMysteryModel = require( 'FUNCTION_BUILDER_BASICS/mystery/model/FBBMysteryModel' );
+  var FBBMysteryScreenView = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysteryScreenView' );
   var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
   var FBIconFactory = require( 'FUNCTION_BUILDER/common/view/FBIconFactory' );
   var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MysteryModel = require( 'FUNCTION_BUILDER_BASICS/mystery/model/MysteryModel' );
-  var MysteryScreenView = require( 'FUNCTION_BUILDER_BASICS/mystery/view/MysteryScreenView' );
   var Property = require( 'AXON/Property' );
   var Screen = require( 'JOIST/Screen' );
 
@@ -27,7 +27,7 @@ define( function( require ) {
    * @param {Tandem} tandem
    * @constructor
    */
-  function MysteryScreen( tandem ) {
+  function FBBMysteryScreen( tandem ) {
 
     var options = {
       name: screenMysteryString,
@@ -40,12 +40,12 @@ define( function( require ) {
     };
 
     Screen.call( this,
-      function() { return new MysteryModel(); },
-      function( model ) { return new MysteryScreenView( model ); },
+      function() { return new FBBMysteryModel(); },
+      function( model ) { return new FBBMysteryScreenView( model ); },
       options );
   }
 
-  functionBuilderBasics.register( 'MysteryScreen', MysteryScreen );
+  functionBuilderBasics.register( 'FBBMysteryScreen', FBBMysteryScreen );
 
-  return inherit( Screen, MysteryScreen );
+  return inherit( Screen, FBBMysteryScreen );
 } );

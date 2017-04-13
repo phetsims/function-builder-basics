@@ -9,8 +9,8 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var FBBMysteryScreen = require( 'FUNCTION_BUILDER_BASICS/mystery/FBBMysteryScreen' );
   var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
-  var MysteryScreen = require( 'FUNCTION_BUILDER_BASICS/mystery/MysteryScreen' );
   var PatternsScreen = require( 'FUNCTION_BUILDER/patterns/PatternsScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
@@ -36,7 +36,7 @@ define( function( require ) {
 
     var screens = [
       new PatternsScreen( tandem.createTandem( 'patternsScreen' ) ),
-      new MysteryScreen( tandem.createTandem( 'mysteryScreen' ) )
+      new FBBMysteryScreen( tandem.createTandem( 'mysteryScreen' ) )
     ];
 
     if ( FBQueryParameters.testScreen ) {

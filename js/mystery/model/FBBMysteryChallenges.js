@@ -22,7 +22,7 @@ define( function( require ) {
   var Shrink = require( 'FUNCTION_BUILDER/patterns/model/functions/Shrink' );
   var Warhol = require( 'FUNCTION_BUILDER/patterns/model/functions/Warhol' );
 
-  var MysteryChallenges = {
+  var FBBMysteryChallenges = {
 
     // Index of the challenge in each pool that is display on startup and reset.
     // This provides a reproducible challenge for the teacher.
@@ -98,7 +98,7 @@ define( function( require ) {
     ]
   };
 
-  functionBuilderBasics.register( 'MysteryChallenges', MysteryChallenges );
+  functionBuilderBasics.register( 'FBBMysteryChallenges', FBBMysteryChallenges );
 
-  return MysteryChallenges;
+  return FBBMysteryChallenges;
 } );

@@ -26,7 +26,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function MysteryFunctionNode( functionInstance, container, builderNode, dragLayer, options ) {
+  function FBBMysteryFunctionNode( functionInstance, container, builderNode, dragLayer, options ) {
 
     options = _.extend( {
       size: FBConstants.FUNCTION_SIZE,
@@ -49,9 +49,9 @@ define( function( require ) {
     this.hiddenNode = options.hiddenNode;
   }
 
-  functionBuilderBasics.register( 'MysteryFunctionNode', MysteryFunctionNode );
+  functionBuilderBasics.register( 'FBBMysteryFunctionNode', FBBMysteryFunctionNode );
 
-  return inherit( ImageFunctionNode, MysteryFunctionNode, {
+  return inherit( ImageFunctionNode, FBBMysteryFunctionNode, {
 
     /**
      * Sets the color of the question mark.
