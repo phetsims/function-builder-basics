@@ -57,7 +57,7 @@ define( function( require ) {
      * Sets the color of the question mark.
      * @param {Color|string} color
      */
-    setHiddenNodeColor: function( color ) {
+    setQuestionMarkColor: function( color ) {
       this.hiddenNode.fill = color;
     }
   } );

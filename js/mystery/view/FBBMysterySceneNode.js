@@ -230,7 +230,7 @@ define( function( require ) {
         var functionNode = this.getFunctionNode( functionConstructors[ i ] );
 
         // change the color of its question mark
-        functionNode.setHiddenNodeColor( questionMarkColors[ i ] );
+        functionNode.setQuestionMarkColor( questionMarkColors[ i ] );
 
         // move the function to the builder
         functionNode.moveToBuilder( slotNumber );
