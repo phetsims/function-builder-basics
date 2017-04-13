@@ -31,12 +31,12 @@ define( function( require ) {
     // {constructor[][]} 1-function challenges
     POOL1: [
       [ Erase ], // selected on startup and reset
-      [ Grayscale ],
-      [ Identity ],
-      [ InvertRGB ],
       [ Mirror ],
       [ Rotate90 ],
+      [ Grayscale ],
       [ Rotate180 ],
+      [ Identity ],
+      [ InvertRGB ],
       [ Shrink ],
       [ Warhol ]
     ],
