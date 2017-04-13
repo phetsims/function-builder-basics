@@ -12,20 +12,15 @@ define( function( require ) {
 
   // modules
   var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
-  var FBFont = require( 'FUNCTION_BUILDER/common/FBFont' );
+  var FBIconFactory = require( 'FUNCTION_BUILDER/common/view/FBIconFactory' );
   var functionBasics = require( 'FUNCTION_BASICS/functionBasics' );
-  var FunctionBackgroundNode = require( 'FUNCTION_BUILDER/common/view/functions/FunctionBackgroundNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var MysteryModel = require( 'FUNCTION_BASICS/mystery/model/MysteryModel' );
   var MysteryScreenView = require( 'FUNCTION_BASICS/mystery/view/MysteryScreenView' );
-  var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
   var Screen = require( 'JOIST/Screen' );
-  var ScreenIcon = require( 'JOIST/ScreenIcon' );
-  var Text = require( 'SCENERY/nodes/Text' );
 
   // strings
-  var mysteryCharacterString = require( 'string!FUNCTION_BUILDER/mysteryCharacter' );
   var screenMysteryString = require( 'string!FUNCTION_BUILDER/screen.mystery' );
 
   /**
@@ -37,7 +32,10 @@ define( function( require ) {
     var options = {
       name: screenMysteryString,
       backgroundColorProperty: new Property( FBColors.MYSTERY_SCREEN_BACKGROUND ),
-      homeScreenIcon: createScreenIcon(),
+      homeScreenIcon: FBIconFactory.createMysteryScreenIcon( {
+        functionFill: 'white',
+        questionMarkFill: 'red'
+      } ),
       tandem: tandem
     };
 
@@ -48,29 +46,6 @@ define( function( require ) {
   }
 
   functionBasics.register( 'MysteryScreen', MysteryScreen );
-
-  /**
-   * Creates the icon for the 'Mystery' screen.
-   * @returns {Node}
-   */
-  function createScreenIcon() {
-
-    var functionNode = new FunctionBackgroundNode( {
-      fill: 'white'
-    } );
-
-    var textNode = new Text( mysteryCharacterString, {
-      font: new FBFont( 80 ),
-      fill: 'red',
-      maxWidth: 0.5 * functionNode.width,
-      maxHeight: 0.95 * functionNode.height,
-      center: functionNode.center
-    } );
-
-    var iconNode = new Node( { children: [ functionNode, textNode ] } );
-
-    return new ScreenIcon( iconNode, { fill: FBColors.MYSTERY_SCREEN_BACKGROUND } );
-  }
 
   return inherit( Screen, MysteryScreen );
 } );
