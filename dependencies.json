@@ -1,5 +1,5 @@
 {
-  "comment": "# function-basics 1.0.0-dev.2 Thu Apr 13 2017 10:41:20 GMT-0600 (MDT)",
+  "comment": "# function-builder-basics 1.0.0-dev.2 Thu Apr 13 2017 15:29:45 GMT-0600 (MDT)",
   "assert": {
     "sha": "a707328cc11048787a807714496af23e0bd25be1",
     "branch": "master"
@@ -13,19 +13,19 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "31035c801653739ef09288d94ae4a45fc20bbee3",
+    "sha": "ab95ec866c41124fe5694a41d264a6fbf4cdc5b9",
     "branch": "master"
   },
   "dot": {
     "sha": "8bab61eb4e50987299d8eca0855027746b57823c",
     "branch": "master"
   },
-  "function-basics": {
-    "sha": "572830b4971e0e53c5d23143427105f7ed1e70bd",
+  "function-builder": {
+    "sha": "f6412332a16ad776826690ef37c8d645d200fcb2",
     "branch": "master"
   },
-  "function-builder": {
-    "sha": "32037b395a8850f20a4690d33c7d0a4c4fa509b8",
+  "function-builder-basics": {
+    "sha": "37cd11bf750150764c38cf1bc59e527fe562a0d5",
     "branch": "master"
   },
   "joist": {
