@@ -37,7 +37,7 @@ define( function( require ) {
 
     var screens = [
       new PatternsScreen( tandem.createTandem( 'patternsScreen' ), {
-        backgroundColorProperty: new Property( '#E1F7FF' )
+        backgroundColorProperty: new Property( '#E1F7FF' )  // see issue #12
       } ),
       new MysteryScreen( tandem.createTandem( 'mysteryScreen' ) )
     ];
