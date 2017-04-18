@@ -2,6 +2,7 @@
 
 /**
  * Challenges for the 'Mystery' screen in 'Function Builder: Basics'.
+ * Specified in https://docs.google.com/spreadsheets/d/1_ndx3YmLA2H_w0iFouS6rur3EmDebyjPIf_OTmKy13M/edit#gid=0
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
