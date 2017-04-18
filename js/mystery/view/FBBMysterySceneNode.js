@@ -26,6 +26,9 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
+  // constants
+  var QUESTION_MARK_COLORS = [ 'red', 'rgb( 0, 170, 255 )', 'green', 'orange', 'magenta' ];
+
   /**
    * @param {MysteryScene} scene - model for this scene
    * @param {Bounds2} layoutBounds - layoutBounds of the parent ScreenView
@@ -134,7 +137,7 @@ define( function( require ) {
     } );
 
     // @private colors for the '?' on function nodes
-    this.questionMarkColors = phet.joist.random.shuffle( FBColors.QUESTION_MARK_COLORS );
+    this.questionMarkColors = phet.joist.random.shuffle( QUESTION_MARK_COLORS );
 
     // @private
     this.scene = scene;
@@ -287,7 +290,7 @@ define( function( require ) {
      */
     getQuestionMarkColors: function( numberOfColors ) {
 
-      assert && assert( numberOfColors <= FBColors.QUESTION_MARK_COLORS.length );
+      assert && assert( numberOfColors <= QUESTION_MARK_COLORS.length );
 
       var colors = [];
       while ( colors.length < numberOfColors ) {
@@ -303,7 +306,7 @@ define( function( require ) {
 
         // replenish the colors
         if ( this.questionMarkColors.length === 0 ) {
-          this.questionMarkColors = phet.joist.random.shuffle( FBColors.QUESTION_MARK_COLORS );
+          this.questionMarkColors = phet.joist.random.shuffle( QUESTION_MARK_COLORS );
 
           // prevent choosing the same color consecutively
           if ( this.questionMarkColors[0] === color ) {
