@@ -47,7 +47,10 @@ define( function( require ) {
       functionCarouselVisible: false,
 
       // Hide the checkbox that lets us show/hide the identify of functions in the builder.
-      hideFunctionsCheckBoxVisible: false
+      hideFunctionsCheckBoxVisible: false,
+
+      // Show an image on the 'See Inside' check box icon
+      seeInsideIconType: 'image'
 
     }, options );
 
