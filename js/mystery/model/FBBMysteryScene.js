@@ -47,11 +47,6 @@ define( function( require ) {
   var sunImage = require( 'image!FUNCTION_BUILDER/cards/sun.png' );
   var triangleImage = require( 'image!FUNCTION_BUILDER/cards/triangle.png' );
 
-  // constants
-  var MAX_SLOTS = 3; // max number of slots in the builder
-  var BUILDER_WIDTH = ( MAX_SLOTS * FBConstants.FUNCTION_SIZE.width ) + 70;
-  var BUILDER_X = ( FBConstants.SCREEN_VIEW_LAYOUT_BOUNDS.width / 2 ) - ( BUILDER_WIDTH / 2 );
-
   /**
    * @param {ImageFunction[][]} challengePool
    * @param {Object} [options]
@@ -60,22 +55,21 @@ define( function( require ) {
   function FBBMysteryScene( challengePool, options ) {
 
     options = _.extend( {
-      functionsPerChallenge: 1,
+      numberOfSlots: 1,
       numberOfEachCard: 1
     }, options );
-    assert && assert( options.functionsPerChallenge <= MAX_SLOTS );
 
     // {Node} scene selection icon
     assert && assert( !options.iconNode );
-    options.iconNode = FBIconFactory.createSceneIcon( options.functionsPerChallenge );
+    options.iconNode = FBIconFactory.createSceneIcon( options.numberOfSlots );
 
     // Create enough instances of each function type to support the case where all functions
     // in a challenge have the same type.
     assert && assert( !options.numberOfEachFunction );
-    options.numberOfEachFunction = options.functionsPerChallenge;
+    options.numberOfEachFunction = options.numberOfSlots;
 
     // @private
-    this.functionsPerChallenge = options.functionsPerChallenge;
+    this.numberOfSlots = options.numberOfSlots;
 
     // validate the challenge pool
     if ( assert ) {
@@ -87,7 +81,7 @@ define( function( require ) {
           var challenge = challengePool[ i ]; // {ImageFunction[]}
 
           // validate challenge
-          assert && assert( challenge.length === options.functionsPerChallenge,
+          assert && assert( challenge.length === options.numberOfSlots,
             'incorrect number of functions in challenge: ' + challenge );
         }
       })();
@@ -130,10 +124,12 @@ define( function( require ) {
       new FunctionCreator( Warhol )
     ];
 
+    var builderWidth = Scene.computeBuilderWidth( options.numberOfSlots );
+    var builderX = ( FBConstants.SCREEN_VIEW_LAYOUT_BOUNDS.width / 2 ) - ( builderWidth / 2 );
     var builder = new Builder( {
-      numberOfSlots: options.functionsPerChallenge,
-      width: BUILDER_WIDTH,
-      location: new Vector2( BUILDER_X, FBConstants.BUILDER_Y )
+      numberOfSlots: options.numberOfSlots,
+      width: builderWidth,
+      location: new Vector2( builderX, FBConstants.BUILDER_Y )
     } );
 
     Scene.call( this, cardContent, functionCreators, builder, options );

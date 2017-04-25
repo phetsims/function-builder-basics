@@ -20,9 +20,9 @@ define( function( require ) {
    */
   function FBBMysteryModel() {
     FBModel.call( this, [
-      new FBBMysteryScene( FBBMysteryChallenges.POOL1, { functionsPerChallenge: 1 } ),
-      new FBBMysteryScene( FBBMysteryChallenges.POOL2, { functionsPerChallenge: 2 } ),
-      new FBBMysteryScene( FBBMysteryChallenges.POOL3, { functionsPerChallenge: 3 } )
+      new FBBMysteryScene( FBBMysteryChallenges.POOL1, { numberOfSlots: 1 } ),
+      new FBBMysteryScene( FBBMysteryChallenges.POOL2, { numberOfSlots: 2 } ),
+      new FBBMysteryScene( FBBMysteryChallenges.POOL3, { numberOfSlots: 3 } )
     ] );
   }
 
