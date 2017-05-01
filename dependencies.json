@@ -1,75 +1,75 @@
 {
-  "comment": "# function-builder-basics 1.0.0-dev.3 Tue Apr 18 2017 09:39:11 GMT-0600 (MDT)",
+  "comment": "# function-builder-basics 1.0.0-rc.1 Mon May 01 2017 11:30:33 GMT-0600 (MDT)",
   "assert": {
     "sha": "5c3f92048a9c2ffd6df8ede54fd64f1f7a7e4ef2",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "axon": {
     "sha": "004364482990e9e35d36ef3c14aae11267af6fdd",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "brand": {
     "sha": "a4d6573f425ca2240f3b057f5cc8731f982100ff",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "chipper": {
     "sha": "628cdd7d530de7968cd8dd5c2dd9e022fcd67ade",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "dot": {
     "sha": "f56a44110f1a637055dc8f5004a9daed43b44e0c",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "function-builder": {
-    "sha": "29939b7515c15be038890d4ea03e1f5eae40369c",
+    "sha": "518774f57a476660452259fa37ff0fafd0513c5b",
     "branch": "master"
   },
   "function-builder-basics": {
-    "sha": "c49121d8a5ad82e45d189b0e0707abbe0c5e666e",
-    "branch": "master"
+    "sha": "0dc629dbea308a9b0397cd690fc4e28cf72259e7",
+    "branch": "1.0"
   },
   "joist": {
     "sha": "deef1bf3ddd43c2b5761f2335607e3c3dfd2305e",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "kite": {
     "sha": "2d9c9d843780a4e90d4a478e6bd7f60b8a6a2e24",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "phet-core": {
     "sha": "76ec02046b2a8da592d3273e93d52088d9b58121",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "phetcommon": {
     "sha": "d0ffe176ab56f58ca5f49d61d2be48c33d7698d4",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "query-string-machine": {
     "sha": "e7055778b4784bd4b1c5e33a99e31b98a93cb05f",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "scenery": {
     "sha": "69953c5cf61304f01c07c45342d078f80c468735",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "scenery-phet": {
     "sha": "8707a2653406443e52668b7a81c596f13445d808",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "sherpa": {
     "sha": "0e326d542b93f5cf3eea2b175d195c18b9bdfb6e",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "sun": {
     "sha": "cfea9c5aeaa778e9ce466ac587bf3735820637a8",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "tandem": {
     "sha": "30603e6651945c5adf8fb0d4861d9fa74cea385e",
-    "branch": "master"
+    "branch": "HEAD"
   },
   "twixt": {
     "sha": "b1488b51a203d48f4b4b4b03517453eeb815be4c",
-    "branch": "master"
+    "branch": "HEAD"
   }
 }
