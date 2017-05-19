@@ -28,7 +28,7 @@ define( function( require ) {
       leadDesign: 'Amanda McGarry',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
       team: 'Amy Hanson, Karina K. R. Hensberry, Ariel Paul, Kathy Perkins,\nSam Reid, Beth Stade, David Webb',
-      qualityAssurance: 'Steele Dalton, Amanda Davis, Andrea Lin, Ben Roberts'
+      qualityAssurance: 'Steele Dalton, Amanda Davis, Bryce Griebenow, Ethan Johnson, Andrea Lin, Ben Roberts, Maggie Wiseman'
     }
   };
 
