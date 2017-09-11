@@ -28,8 +28,8 @@ define( function( require ) {
   var Identity = require( 'FUNCTION_BUILDER/patterns/model/functions/Identity' );
   var InvertRGB = require( 'FUNCTION_BUILDER/patterns/model/functions/InvertRGB' );
   var Mirror = require( 'FUNCTION_BUILDER/patterns/model/functions/Mirror' );
-  var Rotate90 = require( 'FUNCTION_BUILDER/patterns/model/functions/Rotate90' );
   var Rotate180 = require( 'FUNCTION_BUILDER/patterns/model/functions/Rotate180' );
+  var Rotate90 = require( 'FUNCTION_BUILDER/patterns/model/functions/Rotate90' );
   var Shrink = require( 'FUNCTION_BUILDER/patterns/model/functions/Shrink' );
   var Warhol = require( 'FUNCTION_BUILDER/patterns/model/functions/Warhol' );
 
