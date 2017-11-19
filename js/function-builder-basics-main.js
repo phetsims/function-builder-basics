@@ -21,7 +21,7 @@ define( function( require ) {
   var functionBuilderBasicsTitleString = require( 'string!FUNCTION_BUILDER_BASICS/function-builder-basics.title' );
 
   // constants
-  var tandem = Tandem.createRootTandem();
+  var tandem = Tandem.rootTandem;
 
   var options = {
     credits: {
