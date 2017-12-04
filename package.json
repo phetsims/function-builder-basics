@@ -19,6 +19,11 @@
     "phetLibs": [
       "function-builder",
       "twixt"
-    ]
+    ],
+    "runnable": true,
+    "supportedBrands": [
+      "phet"
+    ],
+    "simulation": true
   }
 }
