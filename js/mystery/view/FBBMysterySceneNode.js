@@ -49,7 +49,7 @@ define( function( require ) {
       // Hide the checkbox that lets us show/hide the identify of functions in the builder.
       hideFunctionsCheckboxVisible: false,
 
-      // Show an image on the 'See Inside' check box icon
+      // Show an image on the 'See Inside' checkbox icon
       seeInsideIconType: 'image'
 
     }, options );
@@ -135,7 +135,7 @@ define( function( require ) {
         revealButton.enabled = revealButton.enabled || ( numberOfCards === 3 );
       } );
 
-      // enable 'See Inside' check box
+      // enable 'See Inside' checkbox
       self.seeInsideCheckbox.enabled = self.seeInsideCheckbox.enabled || ( numberOfCards === 1 );
     } );
 
@@ -196,7 +196,7 @@ define( function( require ) {
       // reset 'See Inside' property
       this.seeInsideProperty.reset();
 
-      // disable 'See Inside' check box
+      // disable 'See Inside' checkbox
       this.seeInsideCheckbox.enabled = false;
     },
 
