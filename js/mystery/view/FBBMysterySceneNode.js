@@ -15,14 +15,12 @@ define( function( require ) {
   var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
   var FBFont = require( 'FUNCTION_BUILDER/common/FBFont' );
   var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
-  var FontAwesomeNode = require( 'SUN/FontAwesomeNode' );
   var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   var ImageCard = require( 'FUNCTION_BUILDER/common/model/cards/ImageCard' );
   var ImageCardNode = require( 'FUNCTION_BUILDER/common/view/cards/ImageCardNode' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var Property = require( 'AXON/Property' );
-  var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
+  var RefreshButton = require( 'SCENERY_PHET/buttons/RefreshButton' );
   var SceneNode = require( 'FUNCTION_BUILDER/common/view/SceneNode' );
   var Text = require( 'SCENERY/nodes/Text' );
 
@@ -99,9 +97,7 @@ define( function( require ) {
     }
 
     // button for generating a new challenge
-    var generateButton = new RectangularPushButton( {
-      content: new FontAwesomeNode( 'refresh' ),
-      baseColor: PhetColorScheme.BUTTON_YELLOW,
+    var generateButton = new RefreshButton( {
       listener: function() { scene.nextChallenge(); },
       xMargin: 18,
       yMargin: 10,
