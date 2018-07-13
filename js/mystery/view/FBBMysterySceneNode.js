@@ -112,7 +112,7 @@ define( function( require ) {
       centerX: generateButton.centerX,
       top: generateButton.bottom + 10
     } );
-    if ( FBQueryParameters.showAnswers ) {
+    if ( phet.chipper.queryParameters.showAnswers ) {
       this.addChild( this.answerNode );
     }
 
