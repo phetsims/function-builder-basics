@@ -1,5 +1,5 @@
 {
-  "comment": "# function-builder-basics 1.0.3 Wed Jul 25 2018 02:43:11 GMT-0600 (MDT)",
+  "comment": "# function-builder-basics 1.0.4-rc.1 Wed Jul 25 2018 04:27:31 GMT-0600 (MDT)",
   "assert": {
     "sha": "5c3f92048a9c2ffd6df8ede54fd64f1f7a7e4ef2",
     "branch": "HEAD"
@@ -14,7 +14,7 @@
   },
   "chipper": {
     "sha": "6fdef535d7fcffb66810f76989141a31cd4b611f",
-    "branch": "function-builder-basics-1.0"
+    "branch": "HEAD"
   },
   "dot": {
     "sha": "f56a44110f1a637055dc8f5004a9daed43b44e0c",
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "function-builder-basics": {
-    "sha": "b7f3d2c6dc401350596b9fd58ae847c90a91b2f2",
+    "sha": "6bdd8a2764d512dbf3f8e79366ead663258cc4de",
     "branch": "1.0"
   },
   "joist": {
