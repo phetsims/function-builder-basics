@@ -1,5 +1,5 @@
 {
-  "comment": "# function-builder-basics 1.0.4 Wed Aug 08 2018 13:46:10 GMT-0600 (MDT)",
+  "comment": "# function-builder-basics 1.0.4 Thu Aug 09 2018 23:34:23 GMT-0600 (MDT)",
   "assert": {
     "sha": "5c3f92048a9c2ffd6df8ede54fd64f1f7a7e4ef2",
     "branch": "HEAD"
@@ -13,8 +13,8 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "6fdef535d7fcffb66810f76989141a31cd4b611f",
-    "branch": "HEAD"
+    "sha": "1477e5f5ba2381f136d80a8906a55f36b01eef4b",
+    "branch": "function-builder-basics-1.0"
   },
   "dot": {
     "sha": "f56a44110f1a637055dc8f5004a9daed43b44e0c",
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "function-builder-basics": {
-    "sha": "ab3ad849c4edf490c86c36fc0ccd896a3139dba3",
+    "sha": "a37b0732e8d83c968e58493c5cf6c2f60f4cae31",
     "branch": "1.0"
   },
   "joist": {
@@ -41,8 +41,8 @@
     "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "d0ffe176ab56f58ca5f49d61d2be48c33d7698d4",
-    "branch": "HEAD"
+    "sha": "efd035151c693022d6356b4628445840598c7e33",
+    "branch": "function-builder-basics-1.0"
   },
   "query-string-machine": {
     "sha": "e7055778b4784bd4b1c5e33a99e31b98a93cb05f",
