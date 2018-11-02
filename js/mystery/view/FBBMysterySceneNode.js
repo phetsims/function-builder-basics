@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var CardContainer = require( 'FUNCTION_BUILDER/common/view/containers/CardContainer' );
   var EyeToggleButton = require( 'SCENERY_PHET/buttons/EyeToggleButton' );
   var FBBMysteryFunctionNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysteryFunctionNode' );
@@ -19,7 +20,6 @@ define( function( require ) {
   var ImageCard = require( 'FUNCTION_BUILDER/common/model/cards/ImageCard' );
   var ImageCardNode = require( 'FUNCTION_BUILDER/common/view/cards/ImageCardNode' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
   var RefreshButton = require( 'SCENERY_PHET/buttons/RefreshButton' );
   var SceneNode = require( 'FUNCTION_BUILDER/common/view/SceneNode' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -67,7 +67,7 @@ define( function( require ) {
         var slotNumber = i;
 
         // Property associated with the slot
-        var revealProperty = new Property( false );
+        var revealProperty = new BooleanProperty( false );
         self.revealProperties.push( revealProperty );
 
         // wire up Property to control the function that's in the slot
