@@ -1,5 +1,5 @@
 {
-  "comment": "# function-builder-basics 1.0.8 Wed Apr 24 2019 15:54:13 GMT-0800 (Alaskan Daylight Time)",
+  "comment": "# function-builder-basics 1.0.8 Fri Jul 05 2019 15:27:32 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "5c3f92048a9c2ffd6df8ede54fd64f1f7a7e4ef2",
     "branch": "HEAD"
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "function-builder-basics": {
-    "sha": "1d6310ff5c935a623b6a5fa114b28f8fc1959f8e",
+    "sha": "7de60147327f780455bf041effbde9828ff1bbd2",
     "branch": "1.0"
   },
   "joist": {
@@ -41,8 +41,8 @@
     "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "efd035151c693022d6356b4628445840598c7e33",
-    "branch": "HEAD"
+    "sha": "84c5ac3acf5ae10c9e7ccd047c8ae8c2ae13ebf1",
+    "branch": "function-builder-basics-1.0"
   },
   "phetmarks": {
     "sha": "4043203e455f544b1f0d4b7ce259c7c5f4e0582c",
