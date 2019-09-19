@@ -25,7 +25,7 @@ define( require => {
   const Text = require( 'SCENERY/nodes/Text' );
 
   // constants
-  var QUESTION_MARK_COLORS = [ 'red', 'rgb( 0, 170, 255 )', 'green', 'orange', 'magenta' ];
+  const QUESTION_MARK_COLORS = [ 'red', 'rgb( 0, 170, 255 )', 'green', 'orange', 'magenta' ];
 
   /**
    * @param {MysteryScene} scene - model for this scene
@@ -52,7 +52,7 @@ define( require => {
 
     }, options );
 
-    var self = this;
+    const self = this;
 
     SceneNode.call( this, scene, layoutBounds, FBBMysteryFunctionNode, options );
 
@@ -64,24 +64,24 @@ define( require => {
       // create a closure for slotNumber using an IIFE
       (function() {
 
-        var slotNumber = i;
+        const slotNumber = i;
 
         // Property associated with the slot
-        var revealProperty = new BooleanProperty( false );
+        const revealProperty = new BooleanProperty( false );
         self.revealProperties.push( revealProperty );
 
         // wire up Property to control the function that's in the slot
         // unlink unnecessary, instances exist for lifetime of the sim
         revealProperty.link( function( reveal ) {
-          var functionNode = self.builderNode.getFunctionNode( slotNumber );
+          const functionNode = self.builderNode.getFunctionNode( slotNumber );
           if ( functionNode ) {
             functionNode.identityVisibleProperty.set( reveal );
           }
         } );
 
         // button below the slot
-        var slotLocation = scene.builder.slots[ slotNumber ].location;
-        var revealButton = new EyeToggleButton( revealProperty, {
+        const slotLocation = scene.builder.slots[ slotNumber ].location;
+        const revealButton = new EyeToggleButton( revealProperty, {
           baseColor: FBColors.HIDDEN_FUNCTION,
           scale: 0.75,
           centerX: slotLocation.x,
@@ -97,7 +97,7 @@ define( require => {
     }
 
     // button for generating a new challenge
-    var generateButton = new RefreshButton( {
+    const generateButton = new RefreshButton( {
       listener: function() { scene.nextChallenge(); },
       xMargin: 18,
       yMargin: 10,
@@ -165,7 +165,7 @@ define( require => {
      * @override
      */
     createCardContainers: function( scene, containerOptions ) {
-      var containers = [];
+      const containers = [];
       scene.cardContent.forEach( function( cardImage ) {
         containers.push( new CardContainer( ImageCard, ImageCardNode, cardImage, containerOptions ) );
       } );
@@ -219,17 +219,17 @@ define( require => {
       this.resetFunctions();
       this.resetCards();
 
-      var functionConstructors = this.scene.challengeProperty.get(); // {constructor[]}
+      const functionConstructors = this.scene.challengeProperty.get(); // {constructor[]}
 
-      var questionMarkColors = this.getQuestionMarkColors( this.scene.builder.numberOfSlots );
+      const questionMarkColors = this.getQuestionMarkColors( this.scene.builder.numberOfSlots );
 
       // transfer functions from carousel to builder, configured to match the challenge
-      var slotNumber = 0;
-      var answerText = '';
-      for ( var i = 0; i < functionConstructors.length; i++ ) {
+      let slotNumber = 0;
+      let answerText = '';
+      for ( let i = 0; i < functionConstructors.length; i++ ) {
 
         // get a function node from the carousel
-        var functionNode = this.getFunctionNode( functionConstructors[ i ] );
+        const functionNode = this.getFunctionNode( functionConstructors[ i ] );
 
         // change the color of its question mark
         functionNode.setQuestionMarkColor( questionMarkColors[ i ] );
@@ -269,8 +269,8 @@ define( require => {
     getFunctionNode: function( functionConstructor ) {
 
       // get the container that has functions of the specified type
-      var functionContainer = null;
-      for ( var i = 0; i < this.functionContainers.length && !functionContainer; i++ ) {
+      let functionContainer = null;
+      for ( let i = 0; i < this.functionContainers.length && !functionContainer; i++ ) {
         if ( this.functionContainers[ i ].getFunctionConstructor() === functionConstructor ) {
           functionContainer = this.functionContainers[ i ];
         }
@@ -291,11 +291,11 @@ define( require => {
 
       assert && assert( numberOfColors <= QUESTION_MARK_COLORS.length );
 
-      var colors = [];
+      const colors = [];
       while ( colors.length < numberOfColors ) {
 
         // remove first color from the pool
-        var color = this.questionMarkColors[ 0 ];
+        const color = this.questionMarkColors[ 0 ];
         this.questionMarkColors.splice( 0, 1 );
 
         // prevent duplicate colors

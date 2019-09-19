@@ -21,9 +21,9 @@ define( require => {
   const functionBuilderBasicsTitleString = require( 'string!FUNCTION_BUILDER_BASICS/function-builder-basics.title' );
 
   // constants
-  var tandem = Tandem.rootTandem;
+  const tandem = Tandem.rootTandem;
 
-  var options = {
+  const options = {
     credits: {
       leadDesign: 'Amanda McGarry',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
@@ -35,7 +35,7 @@ define( require => {
 
   SimLauncher.launch( function() {
 
-    var screens = [
+    const screens = [
       new PatternsScreen( tandem.createTandem( 'patternsScreen' ) ),
       new FBBMysteryScreen( tandem.createTandem( 'mysteryScreen' ) )
     ];
@@ -44,7 +44,7 @@ define( require => {
       screens.push( new TestScreen() );
     }
 
-    var sim = new Sim( functionBuilderBasicsTitleString, screens, options );
+    const sim = new Sim( functionBuilderBasicsTitleString, screens, options );
     sim.start();
   } );
 } );

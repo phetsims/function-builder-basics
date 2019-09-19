@@ -29,7 +29,7 @@ define( require => {
    */
   function FBBMysteryScreen( tandem ) {
 
-    var options = {
+    const options = {
       name: screenMysteryString,
       backgroundColorProperty: new Property( FBColors.MYSTERY_SCREEN_BACKGROUND ),
       homeScreenIcon: FBIconFactory.createMysteryScreenIcon( {

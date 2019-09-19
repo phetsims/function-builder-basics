@@ -23,7 +23,7 @@ define( require => {
   const Shrink = require( 'FUNCTION_BUILDER/patterns/model/functions/Shrink' );
   const Warhol = require( 'FUNCTION_BUILDER/patterns/model/functions/Warhol' );
 
-  var FBBMysteryChallenges = {
+  const FBBMysteryChallenges = {
 
     // Index of the challenge in each pool that is display on startup and reset.
     // This provides a reproducible challenge for the teacher.

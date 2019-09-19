@@ -76,9 +76,9 @@ define( require => {
 
       // limit scope of for-loop var using IIFE
       (function() {
-        for ( var i = 0; i < challengePool.length; i++ ) {
+        for ( let i = 0; i < challengePool.length; i++ ) {
 
-          var challenge = challengePool[ i ]; // {ImageFunction[]}
+          const challenge = challengePool[ i ]; // {ImageFunction[]}
 
           // validate challenge
           assert && assert( challenge.length === options.numberOfSlots,
@@ -96,7 +96,7 @@ define( require => {
     this.availableChallenges.splice( MysteryChallenges.DEFAULT_CHALLENGE_INDEX, 1 ); // remove the default challenge
 
     // {HTMLImageElement[]} images for the input cards, in the order that they appear in the carousel
-    var cardContent = [
+    const cardContent = [
       feetImage,
       snowflakeImage,
       butterflyImage,
@@ -112,7 +112,7 @@ define( require => {
     ];
 
     // {FunctionCreator[]} function creators, in the order that functions appear in the carousel.
-    var functionCreators = [
+    const functionCreators = [
       new FunctionCreator( Mirror ),
       new FunctionCreator( Rotate90 ),
       new FunctionCreator( Grayscale ),
@@ -124,9 +124,9 @@ define( require => {
       new FunctionCreator( Warhol )
     ];
 
-    var builderWidth = Scene.computeBuilderWidth( options.numberOfSlots );
-    var builderX = ( FBConstants.SCREEN_VIEW_LAYOUT_BOUNDS.width / 2 ) - ( builderWidth / 2 );
-    var builder = new Builder( {
+    const builderWidth = Scene.computeBuilderWidth( options.numberOfSlots );
+    const builderX = ( FBConstants.SCREEN_VIEW_LAYOUT_BOUNDS.width / 2 ) - ( builderWidth / 2 );
+    const builder = new Builder( {
       numberOfSlots: options.numberOfSlots,
       width: builderWidth,
       location: new Vector2( builderX, FBConstants.BUILDER_Y )
@@ -178,16 +178,16 @@ define( require => {
 
         // remove the current challenge, so we don't select it twice in a row
         if ( !FBQueryParameters.playAll ) {
-          var currentChallengeIndex = this.availableChallenges.indexOf( this.challengeProperty.get() );
+          const currentChallengeIndex = this.availableChallenges.indexOf( this.challengeProperty.get() );
           this.availableChallenges.splice( currentChallengeIndex, 1 );
           assert && assert( this.availableChallenges.length === this.challengePool.length - 1 );
         }
       }
 
       // randomly select a challenge from the available pool
-      var challengeIndex = FBQueryParameters.playAll ? 0 : phet.joist.random.nextInt( this.availableChallenges.length );
+      const challengeIndex = FBQueryParameters.playAll ? 0 : phet.joist.random.nextInt( this.availableChallenges.length );
       assert && assert( challengeIndex >= 0 && challengeIndex < this.availableChallenges.length );
-      var challenge = this.availableChallenges[ challengeIndex ];
+      const challenge = this.availableChallenges[ challengeIndex ];
 
       // remove the challenge from the available pool
       this.availableChallenges.splice( challengeIndex, 1 );
