@@ -6,22 +6,22 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
+  const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   
   // function modules
-  var Erase = require( 'FUNCTION_BUILDER/patterns/model/functions/Erase' );
-  var Grayscale = require( 'FUNCTION_BUILDER/patterns/model/functions/Grayscale' );
-  var Identity = require( 'FUNCTION_BUILDER/patterns/model/functions/Identity' );
-  var InvertRGB = require( 'FUNCTION_BUILDER/patterns/model/functions/InvertRGB' );
-  var Mirror = require( 'FUNCTION_BUILDER/patterns/model/functions/Mirror' );
-  var Rotate180 = require( 'FUNCTION_BUILDER/patterns/model/functions/Rotate180' );
-  var Rotate90 = require( 'FUNCTION_BUILDER/patterns/model/functions/Rotate90' );
-  var Shrink = require( 'FUNCTION_BUILDER/patterns/model/functions/Shrink' );
-  var Warhol = require( 'FUNCTION_BUILDER/patterns/model/functions/Warhol' );
+  const Erase = require( 'FUNCTION_BUILDER/patterns/model/functions/Erase' );
+  const Grayscale = require( 'FUNCTION_BUILDER/patterns/model/functions/Grayscale' );
+  const Identity = require( 'FUNCTION_BUILDER/patterns/model/functions/Identity' );
+  const InvertRGB = require( 'FUNCTION_BUILDER/patterns/model/functions/InvertRGB' );
+  const Mirror = require( 'FUNCTION_BUILDER/patterns/model/functions/Mirror' );
+  const Rotate180 = require( 'FUNCTION_BUILDER/patterns/model/functions/Rotate180' );
+  const Rotate90 = require( 'FUNCTION_BUILDER/patterns/model/functions/Rotate90' );
+  const Shrink = require( 'FUNCTION_BUILDER/patterns/model/functions/Shrink' );
+  const Warhol = require( 'FUNCTION_BUILDER/patterns/model/functions/Warhol' );
 
   var FBBMysteryChallenges = {
 

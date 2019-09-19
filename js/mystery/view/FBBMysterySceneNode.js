@@ -5,24 +5,24 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var BooleanProperty = require( 'AXON/BooleanProperty' );
-  var CardContainer = require( 'FUNCTION_BUILDER/common/view/containers/CardContainer' );
-  var EyeToggleButton = require( 'SCENERY_PHET/buttons/EyeToggleButton' );
-  var FBBMysteryFunctionNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysteryFunctionNode' );
-  var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
-  var FBFont = require( 'FUNCTION_BUILDER/common/FBFont' );
-  var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
-  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
-  var ImageCard = require( 'FUNCTION_BUILDER/common/model/cards/ImageCard' );
-  var ImageCardNode = require( 'FUNCTION_BUILDER/common/view/cards/ImageCardNode' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var RefreshButton = require( 'SCENERY_PHET/buttons/RefreshButton' );
-  var SceneNode = require( 'FUNCTION_BUILDER/common/view/SceneNode' );
-  var Text = require( 'SCENERY/nodes/Text' );
+  const BooleanProperty = require( 'AXON/BooleanProperty' );
+  const CardContainer = require( 'FUNCTION_BUILDER/common/view/containers/CardContainer' );
+  const EyeToggleButton = require( 'SCENERY_PHET/buttons/EyeToggleButton' );
+  const FBBMysteryFunctionNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysteryFunctionNode' );
+  const FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
+  const FBFont = require( 'FUNCTION_BUILDER/common/FBFont' );
+  const FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
+  const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
+  const ImageCard = require( 'FUNCTION_BUILDER/common/model/cards/ImageCard' );
+  const ImageCardNode = require( 'FUNCTION_BUILDER/common/view/cards/ImageCardNode' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const RefreshButton = require( 'SCENERY_PHET/buttons/RefreshButton' );
+  const SceneNode = require( 'FUNCTION_BUILDER/common/view/SceneNode' );
+  const Text = require( 'SCENERY/nodes/Text' );
 
   // constants
   var QUESTION_MARK_COLORS = [ 'red', 'rgb( 0, 170, 255 )', 'green', 'orange', 'magenta' ];

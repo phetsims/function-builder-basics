@@ -7,21 +7,21 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var FBBMysteryModel = require( 'FUNCTION_BUILDER_BASICS/mystery/model/FBBMysteryModel' );
-  var FBBMysteryScreenView = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysteryScreenView' );
-  var FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
-  var FBIconFactory = require( 'FUNCTION_BUILDER/common/view/FBIconFactory' );
-  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
-  var Screen = require( 'JOIST/Screen' );
+  const FBBMysteryModel = require( 'FUNCTION_BUILDER_BASICS/mystery/model/FBBMysteryModel' );
+  const FBBMysteryScreenView = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysteryScreenView' );
+  const FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
+  const FBIconFactory = require( 'FUNCTION_BUILDER/common/view/FBIconFactory' );
+  const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Property = require( 'AXON/Property' );
+  const Screen = require( 'JOIST/Screen' );
 
   // strings
-  var screenMysteryString = require( 'string!FUNCTION_BUILDER/screen.mystery' );
+  const screenMysteryString = require( 'string!FUNCTION_BUILDER/screen.mystery' );
 
   /**
    * @param {Tandem} tandem

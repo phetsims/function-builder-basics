@@ -5,20 +5,20 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var FBBMysteryScreen = require( 'FUNCTION_BUILDER_BASICS/mystery/FBBMysteryScreen' );
-  var FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
-  var PatternsScreen = require( 'FUNCTION_BUILDER/patterns/PatternsScreen' );
-  var Sim = require( 'JOIST/Sim' );
-  var SimLauncher = require( 'JOIST/SimLauncher' );
-  var Tandem = require( 'TANDEM/Tandem' );
-  var TestScreen = require( 'FUNCTION_BUILDER/test/TestScreen' );
+  const FBBMysteryScreen = require( 'FUNCTION_BUILDER_BASICS/mystery/FBBMysteryScreen' );
+  const FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
+  const PatternsScreen = require( 'FUNCTION_BUILDER/patterns/PatternsScreen' );
+  const Sim = require( 'JOIST/Sim' );
+  const SimLauncher = require( 'JOIST/SimLauncher' );
+  const Tandem = require( 'TANDEM/Tandem' );
+  const TestScreen = require( 'FUNCTION_BUILDER/test/TestScreen' );
 
   // strings
-  var functionBuilderBasicsTitleString = require( 'string!FUNCTION_BUILDER_BASICS/function-builder-basics.title' );
+  const functionBuilderBasicsTitleString = require( 'string!FUNCTION_BUILDER_BASICS/function-builder-basics.title' );
 
   // constants
   var tandem = Tandem.rootTandem;

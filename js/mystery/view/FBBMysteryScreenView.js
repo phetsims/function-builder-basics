@@ -5,14 +5,14 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var FBBMysterySceneNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysterySceneNode' );
-  var FBScreenView = require( 'FUNCTION_BUILDER/common/view/FBScreenView' );
-  var functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
-  var inherit = require( 'PHET_CORE/inherit' );
+  const FBBMysterySceneNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysterySceneNode' );
+  const FBScreenView = require( 'FUNCTION_BUILDER/common/view/FBScreenView' );
+  const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
+  const inherit = require( 'PHET_CORE/inherit' );
 
   /**
    * @param {MysteryModel} model
