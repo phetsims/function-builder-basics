@@ -62,7 +62,7 @@ define( require => {
     for ( var i = 0; i < scene.builder.numberOfSlots; i++ ) {
 
       // create a closure for slotNumber using an IIFE
-      (function() {
+      ( function() {
 
         const slotNumber = i;
 
@@ -93,7 +93,7 @@ define( require => {
         // touchArea
         revealButton.touchArea = revealButton.localBounds.dilatedXY( 25, 15 );
 
-      })();
+      } )();
     }
 
     // button for generating a new challenge
@@ -308,8 +308,8 @@ define( require => {
           this.questionMarkColors = phet.joist.random.shuffle( QUESTION_MARK_COLORS );
 
           // prevent choosing the same color consecutively
-          if ( this.questionMarkColors[0] === color ) {
-            this.questionMarkColors.splice( 0, 1 ); 
+          if ( this.questionMarkColors[ 0 ] === color ) {
+            this.questionMarkColors.splice( 0, 1 );
           }
         }
       }
