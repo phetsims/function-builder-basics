@@ -17,6 +17,7 @@ define( require => {
   const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   const FunctionCreator = require( 'FUNCTION_BUILDER/common/model/functions/FunctionCreator' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const MysteryChallenges = require( 'FUNCTION_BUILDER/mystery/model/MysteryChallenges' );
   const Property = require( 'AXON/Property' );
   const Scene = require( 'FUNCTION_BUILDER/common/model/Scene' );
@@ -54,7 +55,7 @@ define( require => {
    */
   function FBBMysteryScene( challengePool, options ) {
 
-    options = _.extend( {
+    options = merge( {
       numberOfSlots: 1,
       numberOfEachCard: 1
     }, options );

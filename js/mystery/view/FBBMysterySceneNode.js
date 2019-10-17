@@ -20,6 +20,7 @@ define( require => {
   const ImageCard = require( 'FUNCTION_BUILDER/common/model/cards/ImageCard' );
   const ImageCardNode = require( 'FUNCTION_BUILDER/common/view/cards/ImageCardNode' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const RefreshButton = require( 'SCENERY_PHET/buttons/RefreshButton' );
   const SceneNode = require( 'FUNCTION_BUILDER/common/view/SceneNode' );
   const Text = require( 'SCENERY/nodes/Text' );
@@ -35,7 +36,7 @@ define( require => {
    */
   function FBBMysterySceneNode( scene, layoutBounds, options ) {
 
-    options = _.extend( {
+    options = merge( {
 
       /*
        * Mystery scenes have a hidden function carousel, which is where we get functions for composing challenges.

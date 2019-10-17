@@ -13,6 +13,7 @@ define( require => {
   const FBScreenView = require( 'FUNCTION_BUILDER/common/view/FBScreenView' );
   const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
 
   /**
    * @param {MysteryModel} model
@@ -21,7 +22,7 @@ define( require => {
    */
   function FBBMysteryScreenView( model, options ) {
 
-    options = _.extend( {
+    options = merge( {
       sceneControlYOffset: 535 // offset of scene control's top from top of screen
     }, options );
 
