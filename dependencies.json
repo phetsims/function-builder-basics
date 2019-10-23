@@ -1,5 +1,5 @@
 {
-  "comment": "# function-builder-basics 1.0.14-rc.1 Tue Oct 15 2019 18:34:10 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# function-builder-basics 1.0.14-rc.1 Wed Oct 23 2019 15:31:01 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "5c3f92048a9c2ffd6df8ede54fd64f1f7a7e4ef2",
     "branch": "HEAD"
@@ -25,12 +25,12 @@
     "branch": "HEAD"
   },
   "function-builder-basics": {
-    "sha": "fee09816e3371164a60df473bc665452fa8873b1",
+    "sha": "f5e0a1b991557a32098be2e88e272558e30a5638",
     "branch": "1.0"
   },
   "joist": {
-    "sha": "5504a561e35e62e85181e737fcc7cc7220ee7cbe",
-    "branch": "HEAD"
+    "sha": "880fc607e7cb7f1be7458510bd4ea5726d1571cc",
+    "branch": "function-builder-basics-1.0"
   },
   "kite": {
     "sha": "2d9c9d843780a4e90d4a478e6bd7f60b8a6a2e24",
