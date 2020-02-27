@@ -16,7 +16,6 @@ define( require => {
   const FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
   const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
   const FunctionCreator = require( 'FUNCTION_BUILDER/common/model/functions/FunctionCreator' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const merge = require( 'PHET_CORE/merge' );
   const MysteryChallenges = require( 'FUNCTION_BUILDER/mystery/model/MysteryChallenges' );
   const Property = require( 'AXON/Property' );
@@ -48,97 +47,94 @@ define( require => {
   const sunImage = require( 'image!FUNCTION_BUILDER/cards/sun.png' );
   const triangleImage = require( 'image!FUNCTION_BUILDER/cards/triangle.png' );
 
-  /**
-   * @param {ImageFunction[][]} challengePool
-   * @param {Object} [options]
-   * @constructor
-   */
-  function FBBMysteryScene( challengePool, options ) {
+  class FBBMysteryScene extends Scene {
 
-    options = merge( {
-      numberOfSlots: 1,
-      numberOfEachCard: 1
-    }, options );
+    /**
+     * @param {ImageFunction[][]} challengePool
+     * @param {Object} [options]
+     */
+    constructor( challengePool, options ) {
 
-    // {Node} scene selection icon
-    assert && assert( !options.iconNode );
-    options.iconNode = FBIconFactory.createSceneIcon( options.numberOfSlots );
+      options = merge( {
+        numberOfSlots: 1,
+        numberOfEachCard: 1
+      }, options );
 
-    // Create enough instances of each function type to support the case where all functions
-    // in a challenge have the same type.
-    assert && assert( !options.numberOfEachFunction );
-    options.numberOfEachFunction = options.numberOfSlots;
+      // {Node} scene selection icon
+      assert && assert( !options.iconNode );
+      options.iconNode = FBIconFactory.createSceneIcon( options.numberOfSlots );
 
-    // @private
-    this.numberOfSlots = options.numberOfSlots;
+      // Create enough instances of each function type to support the case where all functions
+      // in a challenge have the same type.
+      assert && assert( !options.numberOfEachFunction );
+      options.numberOfEachFunction = options.numberOfSlots;
 
-    // validate the challenge pool
-    if ( assert ) {
+      // validate the challenge pool
+      if ( assert ) {
 
-      // limit scope of for-loop var using IIFE
-      (function() {
-        for ( let i = 0; i < challengePool.length; i++ ) {
+        // limit scope of for-loop var using IIFE
+        ( () => {
+          for ( let i = 0; i < challengePool.length; i++ ) {
 
-          const challenge = challengePool[ i ]; // {ImageFunction[]}
+            const challenge = challengePool[ i ]; // {ImageFunction[]}
 
-          // validate challenge
-          assert && assert( challenge.length === options.numberOfSlots,
-            'incorrect number of functions in challenge: ' + challenge );
-        }
-      })();
+            // validate challenge
+            assert && assert( challenge.length === options.numberOfSlots,
+              'incorrect number of functions in challenge: ' + challenge );
+          }
+        } )();
+      }
+
+      // {HTMLImageElement[]} images for the input cards, in the order that they appear in the carousel
+      const cardContent = [
+        feetImage,
+        snowflakeImage,
+        butterflyImage,
+        stickFigureImage,
+        planetImage,
+        sunImage,
+        beakerImage,
+        cherriesImage,
+        rectangleImage,
+        circleImage,
+        triangleImage,
+        starImage
+      ];
+
+      // {FunctionCreator[]} function creators, in the order that functions appear in the carousel.
+      const functionCreators = [
+        new FunctionCreator( Mirror ),
+        new FunctionCreator( Rotate90 ),
+        new FunctionCreator( Grayscale ),
+        new FunctionCreator( Rotate180 ),
+        new FunctionCreator( Identity ),
+        new FunctionCreator( InvertRGB ),
+        new FunctionCreator( Erase ),
+        new FunctionCreator( Shrink ),
+        new FunctionCreator( Warhol )
+      ];
+
+      const builderWidth = Scene.computeBuilderWidth( options.numberOfSlots );
+      const builderX = ( FBConstants.SCREEN_VIEW_LAYOUT_BOUNDS.width / 2 ) - ( builderWidth / 2 );
+      const builder = new Builder( {
+        numberOfSlots: options.numberOfSlots,
+        width: builderWidth,
+        position: new Vector2( builderX, FBConstants.BUILDER_Y )
+      } );
+
+      super( cardContent, functionCreators, builder, options );
+
+      // @private
+      this.numberOfSlots = options.numberOfSlots;
+
+      // @public the challenge that is displayed
+      this.challengeProperty = new Property( challengePool[ MysteryChallenges.DEFAULT_CHALLENGE_INDEX ] );
+      this.challengePool = challengePool; // (read-only) for debug only, the original challenge pool, do not modify!
+
+      // @private
+      this.availableChallenges = challengePool.slice( 0 ); // available challenges
+      this.availableChallenges.splice( MysteryChallenges.DEFAULT_CHALLENGE_INDEX, 1 ); // remove the default challenge
     }
-
-    // @public the challenge that is displayed
-    this.challengeProperty = new Property( challengePool[ MysteryChallenges.DEFAULT_CHALLENGE_INDEX ] );
-    this.challengePool = challengePool; // (read-only) for debug only, the original challenge pool, do not modify!
-
-    // @private
-    this.availableChallenges = challengePool.slice( 0 ); // available challenges
-    this.availableChallenges.splice( MysteryChallenges.DEFAULT_CHALLENGE_INDEX, 1 ); // remove the default challenge
-
-    // {HTMLImageElement[]} images for the input cards, in the order that they appear in the carousel
-    const cardContent = [
-      feetImage,
-      snowflakeImage,
-      butterflyImage,
-      stickFigureImage,
-      planetImage,
-      sunImage,
-      beakerImage,
-      cherriesImage,
-      rectangleImage,
-      circleImage,
-      triangleImage,
-      starImage
-    ];
-
-    // {FunctionCreator[]} function creators, in the order that functions appear in the carousel.
-    const functionCreators = [
-      new FunctionCreator( Mirror ),
-      new FunctionCreator( Rotate90 ),
-      new FunctionCreator( Grayscale ),
-      new FunctionCreator( Rotate180 ),
-      new FunctionCreator( Identity ),
-      new FunctionCreator( InvertRGB ),
-      new FunctionCreator( Erase ),
-      new FunctionCreator( Shrink ),
-      new FunctionCreator( Warhol )
-    ];
-
-    const builderWidth = Scene.computeBuilderWidth( options.numberOfSlots );
-    const builderX = ( FBConstants.SCREEN_VIEW_LAYOUT_BOUNDS.width / 2 ) - ( builderWidth / 2 );
-    const builder = new Builder( {
-      numberOfSlots: options.numberOfSlots,
-      width: builderWidth,
-      position: new Vector2( builderX, FBConstants.BUILDER_Y )
-    } );
-
-    Scene.call( this, cardContent, functionCreators, builder, options );
-  }
-
-  functionBuilderBasics.register( 'FBBMysteryScene', FBBMysteryScene );
-
-  return inherit( Scene, FBBMysteryScene, {
 
     /**
      * Resets the scene.
@@ -147,8 +143,8 @@ define( require => {
      * @public
      * @override
      */
-    reset: function() {
-      Scene.prototype.reset.call( this );
+    reset() {
+      super.reset();
 
       // force notification when initial challenge is displayed
       if ( this.challengeProperty.get() === this.challengeProperty.initialValue ) {
@@ -161,7 +157,7 @@ define( require => {
       // restock the available challenges, with default challenge removed
       this.availableChallenges = this.challengePool.slice( 0 );
       this.availableChallenges.splice( MysteryChallenges.DEFAULT_CHALLENGE_INDEX, 1 );
-    },
+    }
 
     /**
      * Advances to the next randomly-selected challenge.  After a challenge has been selected, it is not selected
@@ -169,7 +165,7 @@ define( require => {
      *
      * @public
      */
-    nextChallenge: function() {
+    nextChallenge() {
 
       // available pool is empty
       if ( this.availableChallenges.length === 0 ) {
@@ -195,5 +191,7 @@ define( require => {
 
       this.challengeProperty.set( challenge );
     }
-  } );
+  }
+
+  return functionBuilderBasics.register( 'FBBMysteryScene', FBBMysteryScene );
 } );

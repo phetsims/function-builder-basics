@@ -100,7 +100,5 @@ define( require => {
     ]
   };
 
-  functionBuilderBasics.register( 'FBBMysteryChallenges', FBBMysteryChallenges );
-
-  return FBBMysteryChallenges;
+  return functionBuilderBasics.register( 'FBBMysteryChallenges', FBBMysteryChallenges );
 } );

@@ -13,20 +13,17 @@ define( require => {
   const FBBMysteryScene = require( 'FUNCTION_BUILDER_BASICS/mystery/model/FBBMysteryScene' );
   const FBModel = require( 'FUNCTION_BUILDER/common/model/FBModel' );
   const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
-  const inherit = require( 'PHET_CORE/inherit' );
 
-  /**
-   * @constructor
-   */
-  function FBBMysteryModel() {
-    FBModel.call( this, [
-      new FBBMysteryScene( FBBMysteryChallenges.POOL1, { numberOfSlots: 1 } ),
-      new FBBMysteryScene( FBBMysteryChallenges.POOL2, { numberOfSlots: 2 } ),
-      new FBBMysteryScene( FBBMysteryChallenges.POOL3, { numberOfSlots: 3 } )
-    ] );
+  class FBBMysteryModel extends FBModel {
+
+    constructor() {
+      super( [
+        new FBBMysteryScene( FBBMysteryChallenges.POOL1, { numberOfSlots: 1 } ),
+        new FBBMysteryScene( FBBMysteryChallenges.POOL2, { numberOfSlots: 2 } ),
+        new FBBMysteryScene( FBBMysteryChallenges.POOL3, { numberOfSlots: 3 } )
+      ] );
+    }
   }
 
-  functionBuilderBasics.register( 'FBBMysteryModel', FBBMysteryModel );
-
-  return inherit( FBModel, FBBMysteryModel );
+  return functionBuilderBasics.register( 'FBBMysteryModel', FBBMysteryModel );
 } );
