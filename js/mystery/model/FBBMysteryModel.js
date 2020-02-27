@@ -5,25 +5,22 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const FBBMysteryChallenges = require( 'FUNCTION_BUILDER_BASICS/mystery/model/FBBMysteryChallenges' );
-  const FBBMysteryScene = require( 'FUNCTION_BUILDER_BASICS/mystery/model/FBBMysteryScene' );
-  const FBModel = require( 'FUNCTION_BUILDER/common/model/FBModel' );
-  const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
+import FBModel from '../../../../function-builder/js/common/model/FBModel.js';
+import functionBuilderBasics from '../../functionBuilderBasics.js';
+import FBBMysteryChallenges from './FBBMysteryChallenges.js';
+import FBBMysteryScene from './FBBMysteryScene.js';
 
-  class FBBMysteryModel extends FBModel {
+class FBBMysteryModel extends FBModel {
 
-    constructor() {
-      super( [
-        new FBBMysteryScene( FBBMysteryChallenges.POOL1, { numberOfSlots: 1 } ),
-        new FBBMysteryScene( FBBMysteryChallenges.POOL2, { numberOfSlots: 2 } ),
-        new FBBMysteryScene( FBBMysteryChallenges.POOL3, { numberOfSlots: 3 } )
-      ] );
-    }
+  constructor() {
+    super( [
+      new FBBMysteryScene( FBBMysteryChallenges.POOL1, { numberOfSlots: 1 } ),
+      new FBBMysteryScene( FBBMysteryChallenges.POOL2, { numberOfSlots: 2 } ),
+      new FBBMysteryScene( FBBMysteryChallenges.POOL3, { numberOfSlots: 3 } )
+    ] );
   }
+}
 
-  return functionBuilderBasics.register( 'FBBMysteryModel', FBBMysteryModel );
-} );
+functionBuilderBasics.register( 'FBBMysteryModel', FBBMysteryModel );
+export default FBBMysteryModel;

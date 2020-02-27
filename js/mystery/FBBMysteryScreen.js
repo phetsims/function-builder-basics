@@ -7,45 +7,42 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const FBBMysteryModel = require( 'FUNCTION_BUILDER_BASICS/mystery/model/FBBMysteryModel' );
-  const FBBMysteryScreenView = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysteryScreenView' );
-  const FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
-  const FBIconFactory = require( 'FUNCTION_BUILDER/common/view/FBIconFactory' );
-  const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
-  const Property = require( 'AXON/Property' );
-  const Screen = require( 'JOIST/Screen' );
+import Property from '../../../axon/js/Property.js';
+import FBColors from '../../../function-builder/js/common/FBColors.js';
+import FBIconFactory from '../../../function-builder/js/common/view/FBIconFactory.js';
+import functionBuilderStrings from '../../../function-builder/js/function-builder-strings.js';
+import Screen from '../../../joist/js/Screen.js';
+import functionBuilderBasics from '../functionBuilderBasics.js';
+import FBBMysteryModel from './model/FBBMysteryModel.js';
+import FBBMysteryScreenView from './view/FBBMysteryScreenView.js';
 
-  // strings
-  const screenMysteryString = require( 'string!FUNCTION_BUILDER/screen.mystery' );
+const screenMysteryString = functionBuilderStrings.screen.mystery;
 
-  class FBBMysteryScreen extends Screen {
+class FBBMysteryScreen extends Screen {
 
-    /**
-     * @param {Tandem} tandem
-     */
-    constructor( tandem ) {
+  /**
+   * @param {Tandem} tandem
+   */
+  constructor( tandem ) {
 
-      const options = {
-        name: screenMysteryString,
-        backgroundColorProperty: new Property( FBColors.MYSTERY_SCREEN_BACKGROUND ),
-        homeScreenIcon: FBIconFactory.createMysteryScreenIcon( {
-          functionFill: 'white',
-          questionMarkFill: 'red'
-        } ),
-        tandem: tandem
-      };
+    const options = {
+      name: screenMysteryString,
+      backgroundColorProperty: new Property( FBColors.MYSTERY_SCREEN_BACKGROUND ),
+      homeScreenIcon: FBIconFactory.createMysteryScreenIcon( {
+        functionFill: 'white',
+        questionMarkFill: 'red'
+      } ),
+      tandem: tandem
+    };
 
-      super(
-        () => new FBBMysteryModel(),
-        model => new FBBMysteryScreenView( model ),
-        options
-      );
-    }
+    super(
+      () => new FBBMysteryModel(),
+      model => new FBBMysteryScreenView( model ),
+      options
+    );
   }
+}
 
-  return functionBuilderBasics.register( 'FBBMysteryScreen', FBBMysteryScreen );
-} );
+functionBuilderBasics.register( 'FBBMysteryScreen', FBBMysteryScreen );
+export default FBBMysteryScreen;

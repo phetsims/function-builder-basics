@@ -5,46 +5,42 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const FBBMysteryScreen = require( 'FUNCTION_BUILDER_BASICS/mystery/FBBMysteryScreen' );
-  const FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
-  const PatternsScreen = require( 'FUNCTION_BUILDER/patterns/PatternsScreen' );
-  const Sim = require( 'JOIST/Sim' );
-  const SimLauncher = require( 'JOIST/SimLauncher' );
-  const Tandem = require( 'TANDEM/Tandem' );
-  const TestScreen = require( 'FUNCTION_BUILDER/test/TestScreen' );
+import FBQueryParameters from '../../function-builder/js/common/FBQueryParameters.js';
+import PatternsScreen from '../../function-builder/js/patterns/PatternsScreen.js';
+import TestScreen from '../../function-builder/js/test/TestScreen.js';
+import Sim from '../../joist/js/Sim.js';
+import SimLauncher from '../../joist/js/SimLauncher.js';
+import Tandem from '../../tandem/js/Tandem.js';
+import functionBuilderBasicsStrings from './function-builder-basics-strings.js';
+import FBBMysteryScreen from './mystery/FBBMysteryScreen.js';
 
-  // strings
-  const functionBuilderBasicsTitleString = require( 'string!FUNCTION_BUILDER_BASICS/function-builder-basics.title' );
+const functionBuilderBasicsTitleString = functionBuilderBasicsStrings[ 'function-builder-basics' ].title;
 
-  // constants
-  const tandem = Tandem.ROOT;
+// constants
+const tandem = Tandem.ROOT;
 
-  const options = {
-    credits: {
-      leadDesign: 'Amanda McGarry',
-      softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
-      team: 'Amy Hanson, Karina K. R. Hensberry, Ariel Paul, Kathy Perkins, Sam Reid, Beth Stade, David Webb',
-      qualityAssurance: 'Steele Dalton, Amanda Davis, Bryce Griebenow, Ethan Johnson, Andrea Lin, Ben Roberts, ' +
-                        'Maggie Wiseman'
-    }
-  };
+const options = {
+  credits: {
+    leadDesign: 'Amanda McGarry',
+    softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
+    team: 'Amy Hanson, Karina K. R. Hensberry, Ariel Paul, Kathy Perkins, Sam Reid, Beth Stade, David Webb',
+    qualityAssurance: 'Steele Dalton, Amanda Davis, Bryce Griebenow, Ethan Johnson, Andrea Lin, Ben Roberts, ' +
+                      'Maggie Wiseman'
+  }
+};
 
-  SimLauncher.launch( () => {
+SimLauncher.launch( () => {
 
-    const screens = [
-      new PatternsScreen( tandem.createTandem( 'patternsScreen' ) ),
-      new FBBMysteryScreen( tandem.createTandem( 'mysteryScreen' ) )
-    ];
+  const screens = [
+    new PatternsScreen( tandem.createTandem( 'patternsScreen' ) ),
+    new FBBMysteryScreen( tandem.createTandem( 'mysteryScreen' ) )
+  ];
 
-    if ( FBQueryParameters.testScreen ) {
-      screens.push( new TestScreen() );
-    }
+  if ( FBQueryParameters.testScreen ) {
+    screens.push( new TestScreen() );
+  }
 
-    const sim = new Sim( functionBuilderBasicsTitleString, screens, options );
-    sim.start();
-  } );
+  const sim = new Sim( functionBuilderBasicsTitleString, screens, options );
+  sim.start();
 } );

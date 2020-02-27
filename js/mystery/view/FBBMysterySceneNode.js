@@ -5,311 +5,308 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const BooleanProperty = require( 'AXON/BooleanProperty' );
-  const CardContainer = require( 'FUNCTION_BUILDER/common/view/containers/CardContainer' );
-  const EyeToggleButton = require( 'SCENERY_PHET/buttons/EyeToggleButton' );
-  const FBBMysteryFunctionNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysteryFunctionNode' );
-  const FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
-  const FBFont = require( 'FUNCTION_BUILDER/common/FBFont' );
-  const FBQueryParameters = require( 'FUNCTION_BUILDER/common/FBQueryParameters' );
-  const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
-  const ImageCard = require( 'FUNCTION_BUILDER/common/model/cards/ImageCard' );
-  const ImageCardNode = require( 'FUNCTION_BUILDER/common/view/cards/ImageCardNode' );
-  const merge = require( 'PHET_CORE/merge' );
-  const RefreshButton = require( 'SCENERY_PHET/buttons/RefreshButton' );
-  const SceneNode = require( 'FUNCTION_BUILDER/common/view/SceneNode' );
-  const Text = require( 'SCENERY/nodes/Text' );
+import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
+import FBColors from '../../../../function-builder/js/common/FBColors.js';
+import FBFont from '../../../../function-builder/js/common/FBFont.js';
+import FBQueryParameters from '../../../../function-builder/js/common/FBQueryParameters.js';
+import ImageCard from '../../../../function-builder/js/common/model/cards/ImageCard.js';
+import ImageCardNode from '../../../../function-builder/js/common/view/cards/ImageCardNode.js';
+import CardContainer from '../../../../function-builder/js/common/view/containers/CardContainer.js';
+import SceneNode from '../../../../function-builder/js/common/view/SceneNode.js';
+import merge from '../../../../phet-core/js/merge.js';
+import EyeToggleButton from '../../../../scenery-phet/js/buttons/EyeToggleButton.js';
+import RefreshButton from '../../../../scenery-phet/js/buttons/RefreshButton.js';
+import Text from '../../../../scenery/js/nodes/Text.js';
+import functionBuilderBasics from '../../functionBuilderBasics.js';
+import FBBMysteryFunctionNode from './FBBMysteryFunctionNode.js';
 
-  // constants
-  const QUESTION_MARK_COLORS = [ 'red', 'rgb( 0, 170, 255 )', 'green', 'orange', 'magenta' ];
+// constants
+const QUESTION_MARK_COLORS = [ 'red', 'rgb( 0, 170, 255 )', 'green', 'orange', 'magenta' ];
 
-  class FBBMysterySceneNode extends SceneNode {
+class FBBMysterySceneNode extends SceneNode {
 
-    /**
-     * @param {MysteryScene} scene - model for this scene
-     * @param {Bounds2} layoutBounds - layoutBounds of the parent ScreenView
-     * @param {Object} [options]
-     */
-    constructor( scene, layoutBounds, options ) {
+  /**
+   * @param {MysteryScene} scene - model for this scene
+   * @param {Bounds2} layoutBounds - layoutBounds of the parent ScreenView
+   * @param {Object} [options]
+   */
+  constructor( scene, layoutBounds, options ) {
 
-      options = merge( {
+    options = merge( {
 
-        /*
-         * Mystery scenes have a hidden function carousel, which is where we get functions for composing challenges.
-         * This approach was necessary because the Mystery screen was added late in the development process, and
-         * the existence of the function carousel was (by that point) required by too many things.
-         */
-        functionCarouselVisible: false,
+      /*
+       * Mystery scenes have a hidden function carousel, which is where we get functions for composing challenges.
+       * This approach was necessary because the Mystery screen was added late in the development process, and
+       * the existence of the function carousel was (by that point) required by too many things.
+       */
+      functionCarouselVisible: false,
 
-        // Hide the checkbox that lets us show/hide the identify of functions in the builder.
-        hideFunctionsCheckboxVisible: false,
+      // Hide the checkbox that lets us show/hide the identify of functions in the builder.
+      hideFunctionsCheckboxVisible: false,
 
-        // Show an image on the 'See Inside' checkbox icon
-        seeInsideIconType: 'image'
+      // Show an image on the 'See Inside' checkbox icon
+      seeInsideIconType: 'image'
 
-      }, options );
+    }, options );
 
-      super( scene, layoutBounds, FBBMysteryFunctionNode, options );
+    super( scene, layoutBounds, FBBMysteryFunctionNode, options );
 
-      const self = this;
+    const self = this;
 
-      // Toggle buttons below each builder slot, for revealing identity of functions
-      this.revealProperties = [];  // {Property.<boolean>[]}
-      this.revealButtons = []; // {EyeToggleButton[]}
-      for ( var i = 0; i < scene.builder.numberOfSlots; i++ ) {
+    // Toggle buttons below each builder slot, for revealing identity of functions
+    this.revealProperties = [];  // {Property.<boolean>[]}
+    this.revealButtons = []; // {EyeToggleButton[]}
+    for ( var i = 0; i < scene.builder.numberOfSlots; i++ ) {
 
-        // create a closure for slotNumber using an IIFE
-        ( () => {
+      // create a closure for slotNumber using an IIFE
+      ( () => {
 
-          const slotNumber = i;
+        const slotNumber = i;
 
-          // Property associated with the slot
-          const revealProperty = new BooleanProperty( false );
-          self.revealProperties.push( revealProperty );
+        // Property associated with the slot
+        const revealProperty = new BooleanProperty( false );
+        self.revealProperties.push( revealProperty );
 
-          // wire up Property to control the function that's in the slot
-          // unlink unnecessary, instances exist for lifetime of the sim
-          revealProperty.link( reveal => {
-            const functionNode = self.builderNode.getFunctionNode( slotNumber );
-            if ( functionNode ) {
-              functionNode.identityVisibleProperty.set( reveal );
-            }
-          } );
-
-          // button below the slot
-          const slotPosition = scene.builder.slots[ slotNumber ].position;
-          const revealButton = new EyeToggleButton( revealProperty, {
-            baseColor: FBColors.HIDDEN_FUNCTION,
-            scale: 0.75,
-            centerX: slotPosition.x,
-            top: slotPosition.y + 65
-          } );
-          self.revealButtons.push( revealButton );
-          self.controlsLayer.addChild( revealButton );
-
-          // touchArea
-          revealButton.touchArea = revealButton.localBounds.dilatedXY( 25, 15 );
-
-        } )();
-      }
-
-      // button for generating a new challenge
-      const generateButton = new RefreshButton( {
-        listener: () => scene.nextChallenge(),
-        xMargin: 18,
-        yMargin: 10,
-        centerX: this.builderNode.centerX,
-        top: this.builderNode.bottom + 65
-      } );
-      this.addChild( generateButton );
-
-      // @private shows the answer below the generate button, for debugging, i18n not required
-      this.answerNode = new Text( 'answer', {
-        font: new FBFont( 18 ),
-        centerX: generateButton.centerX,
-        top: generateButton.bottom + 10
-      } );
-      if ( phet.chipper.queryParameters.showAnswers ) {
-        this.addChild( this.answerNode );
-      }
-
-      // Update when the challenge changes.
-      // unlink unnecessary, instances exist for lifetime of the sim
-      scene.challengeProperty.lazyLink( challenge => this.updateChallenge() );
-
-      // Enable features based on number of cards that have been moved to the output carousel.
-      // unlink unnecessary, instances exist for lifetime of the sim.
-      this.outputCarousel.numberOfCardsProperty.link( numberOfCards => {
-
-        // enabled function reveal buttons
-        this.revealButtons.forEach( revealButton => {
-          revealButton.enabled = revealButton.enabled || ( numberOfCards === 3 );
+        // wire up Property to control the function that's in the slot
+        // unlink unnecessary, instances exist for lifetime of the sim
+        revealProperty.link( reveal => {
+          const functionNode = self.builderNode.getFunctionNode( slotNumber );
+          if ( functionNode ) {
+            functionNode.identityVisibleProperty.set( reveal );
+          }
         } );
 
-        // enable 'See Inside' checkbox
-        this.seeInsideCheckbox.enabled = this.seeInsideCheckbox.enabled || ( numberOfCards === 1 );
-      } );
+        // button below the slot
+        const slotPosition = scene.builder.slots[ slotNumber ].position;
+        const revealButton = new EyeToggleButton( revealProperty, {
+          baseColor: FBColors.HIDDEN_FUNCTION,
+          scale: 0.75,
+          centerX: slotPosition.x,
+          top: slotPosition.y + 65
+        } );
+        self.revealButtons.push( revealButton );
+        self.controlsLayer.addChild( revealButton );
 
-      // @private colors for the '?' on function nodes
-      this.questionMarkColors = phet.joist.random.shuffle( QUESTION_MARK_COLORS );
+        // touchArea
+        revealButton.touchArea = revealButton.localBounds.dilatedXY( 25, 15 );
 
-      // @private
-      this.scene = scene;
+      } )();
     }
 
-    /**
-     * @public
-     * @override
-     */
-    reset() {
-      super.reset();
-      this.resetChallengeControls();
+    // button for generating a new challenge
+    const generateButton = new RefreshButton( {
+      listener: () => scene.nextChallenge(),
+      xMargin: 18,
+      yMargin: 10,
+      centerX: this.builderNode.centerX,
+      top: this.builderNode.bottom + 65
+    } );
+    this.addChild( generateButton );
+
+    // @private shows the answer below the generate button, for debugging, i18n not required
+    this.answerNode = new Text( 'answer', {
+      font: new FBFont( 18 ),
+      centerX: generateButton.centerX,
+      top: generateButton.bottom + 10
+    } );
+    if ( phet.chipper.queryParameters.showAnswers ) {
+      this.addChild( this.answerNode );
     }
 
-    /**
-     * Creates the card containers that go in the input and output carousels.
-     *
-     * @param {Scene} scene
-     * @param {Object} [containerOptions] - see CardContainer options
-     * @returns {CardContainer[]}
-     * @protected
-     * @override
-     */
-    createCardContainers( scene, containerOptions ) {
-      const containers = [];
-      scene.cardContent.forEach( cardImage => {
-        containers.push( new CardContainer( ImageCard, ImageCardNode, cardImage, containerOptions ) );
-      } );
-      return containers;
-    }
+    // Update when the challenge changes.
+    // unlink unnecessary, instances exist for lifetime of the sim
+    scene.challengeProperty.lazyLink( challenge => this.updateChallenge() );
 
-    /**
-     * Resets controls that need to be reset each time the challenge changes.
-     *
-     * @private
-     */
-    resetChallengeControls() {
+    // Enable features based on number of cards that have been moved to the output carousel.
+    // unlink unnecessary, instances exist for lifetime of the sim.
+    this.outputCarousel.numberOfCardsProperty.link( numberOfCards => {
 
-      // reset Properties for revealing function identity
-      this.revealProperties.forEach( revealProperty => revealProperty.reset() );
-
-      // disable buttons for revealing function identity
+      // enabled function reveal buttons
       this.revealButtons.forEach( revealButton => {
-        revealButton.enabled = false;
+        revealButton.enabled = revealButton.enabled || ( numberOfCards === 3 );
       } );
 
-      // reset 'See Inside' property
-      this.seeInsideProperty.reset();
+      // enable 'See Inside' checkbox
+      this.seeInsideCheckbox.enabled = this.seeInsideCheckbox.enabled || ( numberOfCards === 1 );
+    } );
 
-      // disable 'See Inside' checkbox
-      this.seeInsideCheckbox.enabled = false;
-    }
+    // @private colors for the '?' on function nodes
+    this.questionMarkColors = phet.joist.random.shuffle( QUESTION_MARK_COLORS );
 
-    /**
-     * Completes initialization by displaying the first challenge.
-     *
-     * @public
-     * @override
-     */
-    completeInitialization() {
-      super.completeInitialization();
-      this.updateChallenge();
-    }
+    // @private
+    this.scene = scene;
+  }
 
-    /**
-     * Synchronizes the displayed challenge with the model.
-     *
-     * @private
-     */
-    updateChallenge() {
+  /**
+   * @public
+   * @override
+   */
+  reset() {
+    super.reset();
+    this.resetChallengeControls();
+  }
 
-      this.resetCarousels();
-      this.builderNode.reset();
-      this.resetFunctions();
-      this.resetCards();
+  /**
+   * Creates the card containers that go in the input and output carousels.
+   *
+   * @param {Scene} scene
+   * @param {Object} [containerOptions] - see CardContainer options
+   * @returns {CardContainer[]}
+   * @protected
+   * @override
+   */
+  createCardContainers( scene, containerOptions ) {
+    const containers = [];
+    scene.cardContent.forEach( cardImage => {
+      containers.push( new CardContainer( ImageCard, ImageCardNode, cardImage, containerOptions ) );
+    } );
+    return containers;
+  }
 
-      const functionConstructors = this.scene.challengeProperty.get(); // {constructor[]}
+  /**
+   * Resets controls that need to be reset each time the challenge changes.
+   *
+   * @private
+   */
+  resetChallengeControls() {
 
-      const questionMarkColors = this.getQuestionMarkColors( this.scene.builder.numberOfSlots );
+    // reset Properties for revealing function identity
+    this.revealProperties.forEach( revealProperty => revealProperty.reset() );
 
-      // transfer functions from carousel to builder, configured to match the challenge
-      let slotNumber = 0;
-      let answerText = '';
-      for ( let i = 0; i < functionConstructors.length; i++ ) {
+    // disable buttons for revealing function identity
+    this.revealButtons.forEach( revealButton => {
+      revealButton.enabled = false;
+    } );
 
-        // get a function node from the carousel
-        const functionNode = this.getFunctionNode( functionConstructors[ i ] );
+    // reset 'See Inside' property
+    this.seeInsideProperty.reset();
 
-        // change the color of its question mark
-        functionNode.setQuestionMarkColor( questionMarkColors[ i ] );
+    // disable 'See Inside' checkbox
+    this.seeInsideCheckbox.enabled = false;
+  }
 
-        // move the function to the builder
-        functionNode.moveToBuilder( slotNumber );
+  /**
+   * Completes initialization by displaying the first challenge.
+   *
+   * @public
+   * @override
+   */
+  completeInitialization() {
+    super.completeInitialization();
+    this.updateChallenge();
+  }
 
-        // hide the function's identity
-        functionNode.identityVisibleProperty.set( false );
+  /**
+   * Synchronizes the displayed challenge with the model.
+   *
+   * @private
+   */
+  updateChallenge() {
 
-        // add to answer text
-        answerText += functionNode.functionInstance.name;
-        if ( i < functionConstructors.length - 1 ) {
-          answerText += ' > ';
-        }
+    this.resetCarousels();
+    this.builderNode.reset();
+    this.resetFunctions();
+    this.resetCards();
 
-        slotNumber++;
+    const functionConstructors = this.scene.challengeProperty.get(); // {constructor[]}
+
+    const questionMarkColors = this.getQuestionMarkColors( this.scene.builder.numberOfSlots );
+
+    // transfer functions from carousel to builder, configured to match the challenge
+    let slotNumber = 0;
+    let answerText = '';
+    for ( let i = 0; i < functionConstructors.length; i++ ) {
+
+      // get a function node from the carousel
+      const functionNode = this.getFunctionNode( functionConstructors[ i ] );
+
+      // change the color of its question mark
+      functionNode.setQuestionMarkColor( questionMarkColors[ i ] );
+
+      // move the function to the builder
+      functionNode.moveToBuilder( slotNumber );
+
+      // hide the function's identity
+      functionNode.identityVisibleProperty.set( false );
+
+      // add to answer text
+      answerText += functionNode.functionInstance.name;
+      if ( i < functionConstructors.length - 1 ) {
+        answerText += ' > ';
       }
 
-      // Resets controls that need to be reset each time the challenge changes.
-      this.resetChallengeControls();
-
-      // show the answer for debugging
-      this.answerNode.text = answerText;
-      this.answerNode.centerX = this.builderNode.centerX;
-
-      if ( FBQueryParameters.populateOutput ) {
-        this.populateOutputCarousel();
-      }
+      slotNumber++;
     }
 
-    /**
-     * Given a function constructor, get a corresponding FunctionNode from the carousel.
-     * @param {constructor} functionConstructor - constructor for an ImageFunction
-     * @returns {ImageFunctionNode}
-     */
-    getFunctionNode( functionConstructor ) {
+    // Resets controls that need to be reset each time the challenge changes.
+    this.resetChallengeControls();
 
-      // get the container that has functions of the specified type
-      let functionContainer = null;
-      for ( let i = 0; i < this.functionContainers.length && !functionContainer; i++ ) {
-        if ( this.functionContainers[ i ].getFunctionConstructor() === functionConstructor ) {
-          functionContainer = this.functionContainers[ i ];
-        }
-      }
-      assert && assert( functionContainer, 'functionContainer not found' );
-      assert && assert( !functionContainer.isEmpty(), 'functionContainer is empty' );
+    // show the answer for debugging
+    this.answerNode.text = answerText;
+    this.answerNode.centerX = this.builderNode.centerX;
 
-      // get the first item in the container
-      return functionContainer.getContents()[ 0 ];
-    }
-
-    /**
-     * Gets a set of question mark colors, containing no duplicates.
-     * @param {number} numberOfColors
-     * @returns {Color[]|string[]}
-     */
-    getQuestionMarkColors( numberOfColors ) {
-
-      assert && assert( numberOfColors <= QUESTION_MARK_COLORS.length );
-
-      const colors = [];
-      while ( colors.length < numberOfColors ) {
-
-        // remove first color from the pool
-        const color = this.questionMarkColors[ 0 ];
-        this.questionMarkColors.splice( 0, 1 );
-
-        // prevent duplicate colors
-        if ( colors.indexOf( color ) === -1 ) {
-          colors.push( color );
-        }
-
-        // replenish the colors
-        if ( this.questionMarkColors.length === 0 ) {
-          this.questionMarkColors = phet.joist.random.shuffle( QUESTION_MARK_COLORS );
-
-          // prevent choosing the same color consecutively
-          if ( this.questionMarkColors[ 0 ] === color ) {
-            this.questionMarkColors.splice( 0, 1 );
-          }
-        }
-      }
-      assert && assert( colors.length === numberOfColors );
-      return colors;
+    if ( FBQueryParameters.populateOutput ) {
+      this.populateOutputCarousel();
     }
   }
 
-  return functionBuilderBasics.register( 'FBBMysterySceneNode', FBBMysterySceneNode );
-} );
+  /**
+   * Given a function constructor, get a corresponding FunctionNode from the carousel.
+   * @param {constructor} functionConstructor - constructor for an ImageFunction
+   * @returns {ImageFunctionNode}
+   */
+  getFunctionNode( functionConstructor ) {
+
+    // get the container that has functions of the specified type
+    let functionContainer = null;
+    for ( let i = 0; i < this.functionContainers.length && !functionContainer; i++ ) {
+      if ( this.functionContainers[ i ].getFunctionConstructor() === functionConstructor ) {
+        functionContainer = this.functionContainers[ i ];
+      }
+    }
+    assert && assert( functionContainer, 'functionContainer not found' );
+    assert && assert( !functionContainer.isEmpty(), 'functionContainer is empty' );
+
+    // get the first item in the container
+    return functionContainer.getContents()[ 0 ];
+  }
+
+  /**
+   * Gets a set of question mark colors, containing no duplicates.
+   * @param {number} numberOfColors
+   * @returns {Color[]|string[]}
+   */
+  getQuestionMarkColors( numberOfColors ) {
+
+    assert && assert( numberOfColors <= QUESTION_MARK_COLORS.length );
+
+    const colors = [];
+    while ( colors.length < numberOfColors ) {
+
+      // remove first color from the pool
+      const color = this.questionMarkColors[ 0 ];
+      this.questionMarkColors.splice( 0, 1 );
+
+      // prevent duplicate colors
+      if ( colors.indexOf( color ) === -1 ) {
+        colors.push( color );
+      }
+
+      // replenish the colors
+      if ( this.questionMarkColors.length === 0 ) {
+        this.questionMarkColors = phet.joist.random.shuffle( QUESTION_MARK_COLORS );
+
+        // prevent choosing the same color consecutively
+        if ( this.questionMarkColors[ 0 ] === color ) {
+          this.questionMarkColors.splice( 0, 1 );
+        }
+      }
+    }
+    assert && assert( colors.length === numberOfColors );
+    return colors;
+  }
+}
+
+functionBuilderBasics.register( 'FBBMysterySceneNode', FBBMysterySceneNode );
+export default FBBMysterySceneNode;

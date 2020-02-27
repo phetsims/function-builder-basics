@@ -5,30 +5,27 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const FBBMysterySceneNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysterySceneNode' );
-  const FBScreenView = require( 'FUNCTION_BUILDER/common/view/FBScreenView' );
-  const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
-  const merge = require( 'PHET_CORE/merge' );
+import FBScreenView from '../../../../function-builder/js/common/view/FBScreenView.js';
+import merge from '../../../../phet-core/js/merge.js';
+import functionBuilderBasics from '../../functionBuilderBasics.js';
+import FBBMysterySceneNode from './FBBMysterySceneNode.js';
 
-  class FBBMysteryScreenView extends FBScreenView {
+class FBBMysteryScreenView extends FBScreenView {
 
-    /**
-     * @param {MysteryModel} model
-     * @param {Object} [options]
-     */
-    constructor( model, options ) {
+  /**
+   * @param {MysteryModel} model
+   * @param {Object} [options]
+   */
+  constructor( model, options ) {
 
-      options = merge( {
-        sceneControlYOffset: 535 // offset of scene control's top from top of screen
-      }, options );
+    options = merge( {
+      sceneControlYOffset: 535 // offset of scene control's top from top of screen
+    }, options );
 
-      super( model, FBBMysterySceneNode, options );
-    }
+    super( model, FBBMysterySceneNode, options );
   }
+}
 
-  return functionBuilderBasics.register( 'FBBMysteryScreenView', FBBMysteryScreenView );
-} );
+functionBuilderBasics.register( 'FBBMysteryScreenView', FBBMysteryScreenView );
+export default FBBMysteryScreenView;
