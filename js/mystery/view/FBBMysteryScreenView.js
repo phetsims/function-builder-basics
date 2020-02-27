@@ -12,24 +12,23 @@ define( require => {
   const FBBMysterySceneNode = require( 'FUNCTION_BUILDER_BASICS/mystery/view/FBBMysterySceneNode' );
   const FBScreenView = require( 'FUNCTION_BUILDER/common/view/FBScreenView' );
   const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const merge = require( 'PHET_CORE/merge' );
 
-  /**
-   * @param {MysteryModel} model
-   * @param {Object} [options]
-   * @constructor
-   */
-  function FBBMysteryScreenView( model, options ) {
+  class FBBMysteryScreenView extends FBScreenView {
 
-    options = merge( {
-      sceneControlYOffset: 535 // offset of scene control's top from top of screen
-    }, options );
+    /**
+     * @param {MysteryModel} model
+     * @param {Object} [options]
+     */
+    constructor( model, options ) {
 
-    FBScreenView.call( this, model, FBBMysterySceneNode, options );
+      options = merge( {
+        sceneControlYOffset: 535 // offset of scene control's top from top of screen
+      }, options );
+
+      super( model, FBBMysterySceneNode, options );
+    }
   }
 
-  functionBuilderBasics.register( 'FBBMysteryScreenView', FBBMysteryScreenView );
-
-  return inherit( FBScreenView, FBBMysteryScreenView );
+  return functionBuilderBasics.register( 'FBBMysteryScreenView', FBBMysteryScreenView );
 } );

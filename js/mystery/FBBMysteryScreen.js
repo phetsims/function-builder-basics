@@ -16,36 +16,36 @@ define( require => {
   const FBColors = require( 'FUNCTION_BUILDER/common/FBColors' );
   const FBIconFactory = require( 'FUNCTION_BUILDER/common/view/FBIconFactory' );
   const functionBuilderBasics = require( 'FUNCTION_BUILDER_BASICS/functionBuilderBasics' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const Property = require( 'AXON/Property' );
   const Screen = require( 'JOIST/Screen' );
 
   // strings
   const screenMysteryString = require( 'string!FUNCTION_BUILDER/screen.mystery' );
 
-  /**
-   * @param {Tandem} tandem
-   * @constructor
-   */
-  function FBBMysteryScreen( tandem ) {
+  class FBBMysteryScreen extends Screen {
 
-    const options = {
-      name: screenMysteryString,
-      backgroundColorProperty: new Property( FBColors.MYSTERY_SCREEN_BACKGROUND ),
-      homeScreenIcon: FBIconFactory.createMysteryScreenIcon( {
-        functionFill: 'white',
-        questionMarkFill: 'red'
-      } ),
-      tandem: tandem
-    };
+    /**
+     * @param {Tandem} tandem
+     */
+    constructor( tandem ) {
 
-    Screen.call( this,
-      function() { return new FBBMysteryModel(); },
-      function( model ) { return new FBBMysteryScreenView( model ); },
-      options );
+      const options = {
+        name: screenMysteryString,
+        backgroundColorProperty: new Property( FBColors.MYSTERY_SCREEN_BACKGROUND ),
+        homeScreenIcon: FBIconFactory.createMysteryScreenIcon( {
+          functionFill: 'white',
+          questionMarkFill: 'red'
+        } ),
+        tandem: tandem
+      };
+
+      super(
+        () => new FBBMysteryModel(),
+        model => new FBBMysteryScreenView( model ),
+        options
+      );
+    }
   }
 
-  functionBuilderBasics.register( 'FBBMysteryScreen', FBBMysteryScreen );
-
-  return inherit( Screen, FBBMysteryScreen );
+  return functionBuilderBasics.register( 'FBBMysteryScreen', FBBMysteryScreen );
 } );
