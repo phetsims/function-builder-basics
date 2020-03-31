@@ -12,7 +12,7 @@ import TestScreen from '../../function-builder/js/test/TestScreen.js';
 import Sim from '../../joist/js/Sim.js';
 import SimLauncher from '../../joist/js/SimLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
-import functionBuilderBasicsStrings from './function-builder-basics-strings.js';
+import functionBuilderBasicsStrings from './functionBuilderBasicsStrings.js';
 import FBBMysteryScreen from './mystery/FBBMysteryScreen.js';
 
 const functionBuilderBasicsTitleString = functionBuilderBasicsStrings[ 'function-builder-basics' ].title;

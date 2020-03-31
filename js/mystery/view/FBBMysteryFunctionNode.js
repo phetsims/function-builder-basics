@@ -8,7 +8,7 @@
 
 import FBConstants from '../../../../function-builder/js/common/FBConstants.js';
 import ImageFunctionNode from '../../../../function-builder/js/common/view/functions/ImageFunctionNode.js';
-import functionBuilderStrings from '../../../../function-builder/js/function-builder-strings.js';
+import functionBuilderStrings from '../../../../function-builder/js/functionBuilderStrings.js';
 import merge from '../../../../phet-core/js/merge.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
