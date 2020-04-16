@@ -13,8 +13,6 @@ import merge from '../../../../phet-core/js/merge.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
 
-const mysteryCharacterString = functionBuilderStrings.mysteryCharacter;
-
 class FBBMysteryFunctionNode extends ImageFunctionNode {
   /**
    * @param {MathFunction} functionInstance
@@ -34,7 +32,7 @@ class FBBMysteryFunctionNode extends ImageFunctionNode {
 
     // Node that is displayed when the function's identity is hidden
     assert && assert( !options.hiddenNode );
-    options.hiddenNode = new Text( mysteryCharacterString, {
+    options.hiddenNode = new Text( functionBuilderStrings.mysteryCharacter, {
       font: FBConstants.MYSTERY_FUNCTION_FONT,
       maxWidth: 0.35 * options.size.width,
       maxHeight: 0.9 * options.size.height

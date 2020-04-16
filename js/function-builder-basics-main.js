@@ -15,11 +15,6 @@ import Tandem from '../../tandem/js/Tandem.js';
 import functionBuilderBasicsStrings from './functionBuilderBasicsStrings.js';
 import FBBMysteryScreen from './mystery/FBBMysteryScreen.js';
 
-const functionBuilderBasicsTitleString = functionBuilderBasicsStrings[ 'function-builder-basics' ].title;
-
-// constants
-const tandem = Tandem.ROOT;
-
 const options = {
   credits: {
     leadDesign: 'Amanda McGarry',
@@ -33,14 +28,14 @@ const options = {
 SimLauncher.launch( () => {
 
   const screens = [
-    new PatternsScreen( tandem.createTandem( 'patternsScreen' ) ),
-    new FBBMysteryScreen( tandem.createTandem( 'mysteryScreen' ) )
+    new PatternsScreen( Tandem.ROOT.createTandem( 'patternsScreen' ) ),
+    new FBBMysteryScreen( Tandem.ROOT.createTandem( 'mysteryScreen' ) )
   ];
 
   if ( FBQueryParameters.testScreen ) {
     screens.push( new TestScreen() );
   }
 
-  const sim = new Sim( functionBuilderBasicsTitleString, screens, options );
+  const sim = new Sim( functionBuilderBasicsStrings[ 'function-builder-basics' ].title, screens, options );
   sim.start();
 } );

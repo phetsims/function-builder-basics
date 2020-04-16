@@ -17,8 +17,6 @@ import functionBuilderBasics from '../functionBuilderBasics.js';
 import FBBMysteryModel from './model/FBBMysteryModel.js';
 import FBBMysteryScreenView from './view/FBBMysteryScreenView.js';
 
-const screenMysteryString = functionBuilderStrings.screen.mystery;
-
 class FBBMysteryScreen extends Screen {
 
   /**
@@ -27,7 +25,7 @@ class FBBMysteryScreen extends Screen {
   constructor( tandem ) {
 
     const options = {
-      name: screenMysteryString,
+      name: functionBuilderStrings.screen.mystery,
       backgroundColorProperty: new Property( FBColors.MYSTERY_SCREEN_BACKGROUND ),
       homeScreenIcon: FBIconFactory.createMysteryScreenIcon( {
         functionFill: 'white',

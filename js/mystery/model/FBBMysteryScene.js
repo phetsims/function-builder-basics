@@ -40,10 +40,6 @@ import Warhol from '../../../../function-builder/js/patterns/model/functions/War
 import merge from '../../../../phet-core/js/merge.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
 
-// function modules
-
-// card images
-
 class FBBMysteryScene extends Scene {
 
   /**
