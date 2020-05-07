@@ -10,7 +10,7 @@ import FBQueryParameters from '../../function-builder/js/common/FBQueryParameter
 import PatternsScreen from '../../function-builder/js/patterns/PatternsScreen.js';
 import TestScreen from '../../function-builder/js/test/TestScreen.js';
 import Sim from '../../joist/js/Sim.js';
-import SimLauncher from '../../joist/js/SimLauncher.js';
+import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import functionBuilderBasicsStrings from './functionBuilderBasicsStrings.js';
 import FBBMysteryScreen from './mystery/FBBMysteryScreen.js';
@@ -25,7 +25,7 @@ const options = {
   }
 };
 
-SimLauncher.launch( () => {
+simLauncher.launch( () => {
 
   const screens = [
     new PatternsScreen( Tandem.ROOT.createTandem( 'patternsScreen' ) ),
