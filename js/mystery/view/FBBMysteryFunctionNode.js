@@ -47,6 +47,7 @@ class FBBMysteryFunctionNode extends ImageFunctionNode {
   /**
    * Sets the color of the question mark.
    * @param {Color|string} color
+   * @public
    */
   setQuestionMarkColor( color ) {
     this.hiddenNode.fill = color;

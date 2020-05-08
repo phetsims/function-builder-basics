@@ -255,6 +255,7 @@ class FBBMysterySceneNode extends SceneNode {
    * Given a function constructor, get a corresponding FunctionNode from the carousel.
    * @param {constructor} functionConstructor - constructor for an ImageFunction
    * @returns {ImageFunctionNode}
+   * @public
    */
   getFunctionNode( functionConstructor ) {
 
@@ -276,6 +277,7 @@ class FBBMysterySceneNode extends SceneNode {
    * Gets a set of question mark colors, containing no duplicates.
    * @param {number} numberOfColors
    * @returns {Color[]|string[]}
+   * @public
    */
   getQuestionMarkColors( numberOfColors ) {
 
