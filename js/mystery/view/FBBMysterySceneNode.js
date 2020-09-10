@@ -8,7 +8,6 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import FBColors from '../../../../function-builder/js/common/FBColors.js';
-import FBFont from '../../../../function-builder/js/common/FBFont.js';
 import FBQueryParameters from '../../../../function-builder/js/common/FBQueryParameters.js';
 import ImageCard from '../../../../function-builder/js/common/model/cards/ImageCard.js';
 import ImageCardNode from '../../../../function-builder/js/common/view/cards/ImageCardNode.js';
@@ -17,6 +16,7 @@ import SceneNode from '../../../../function-builder/js/common/view/SceneNode.js'
 import merge from '../../../../phet-core/js/merge.js';
 import EyeToggleButton from '../../../../scenery-phet/js/buttons/EyeToggleButton.js';
 import RefreshButton from '../../../../scenery-phet/js/buttons/RefreshButton.js';
+import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
 import FBBMysteryFunctionNode from './FBBMysteryFunctionNode.js';
@@ -106,7 +106,7 @@ class FBBMysterySceneNode extends SceneNode {
 
     // @private shows the answer below the generate button, for debugging, i18n not required
     this.answerNode = new Text( 'answer', {
-      font: new FBFont( 18 ),
+      font: new PhetFont( 18 ),
       centerX: generateButton.centerX,
       top: generateButton.bottom + 10
     } );
