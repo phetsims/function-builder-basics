@@ -20,7 +20,7 @@ class FBBMysteryScreenView extends FBScreenView {
   constructor( model, options ) {
 
     options = merge( {
-      sceneControlYOffset: 535 // offset of scene control's top from top of screen
+      sceneRadioButtonGroupYOffset: 535 // offset of SceneRadioButtonGroup from top of screen
     }, options );
 
     super( model, FBBMysterySceneNode, options );
