@@ -7,6 +7,7 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
+import dotRandom from '../../../../dot/js/dotRandom.js';
 import FBColors from '../../../../function-builder/js/common/FBColors.js';
 import FBQueryParameters from '../../../../function-builder/js/common/FBQueryParameters.js';
 import ImageCard from '../../../../function-builder/js/common/model/cards/ImageCard.js';
@@ -132,7 +133,7 @@ class FBBMysterySceneNode extends SceneNode {
     } );
 
     // @private colors for the '?' on function nodes
-    this.questionMarkColors = phet.joist.random.shuffle( QUESTION_MARK_COLORS );
+    this.questionMarkColors = dotRandom.shuffle( QUESTION_MARK_COLORS );
 
     // @private
     this.scene = scene;
@@ -297,7 +298,7 @@ class FBBMysterySceneNode extends SceneNode {
 
       // replenish the colors
       if ( this.questionMarkColors.length === 0 ) {
-        this.questionMarkColors = phet.joist.random.shuffle( QUESTION_MARK_COLORS );
+        this.questionMarkColors = dotRandom.shuffle( QUESTION_MARK_COLORS );
 
         // prevent choosing the same color consecutively
         if ( this.questionMarkColors[ 0 ] === color ) {

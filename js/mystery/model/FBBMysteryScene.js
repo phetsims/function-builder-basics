@@ -8,6 +8,7 @@
  */
 
 import Property from '../../../../axon/js/Property.js';
+import dotRandom from '../../../../dot/js/dotRandom.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import beakerImage from '../../../../function-builder/images/cards/beaker_png.js';
 import butterflyImage from '../../../../function-builder/images/cards/butterfly_png.js';
@@ -175,7 +176,7 @@ class FBBMysteryScene extends Scene {
     }
 
     // randomly select a challenge from the available pool
-    const challengeIndex = FBQueryParameters.playAll ? 0 : phet.joist.random.nextInt( this.availableChallenges.length );
+    const challengeIndex = FBQueryParameters.playAll ? 0 : dotRandom.nextInt( this.availableChallenges.length );
     assert && assert( challengeIndex >= 0 && challengeIndex < this.availableChallenges.length );
     const challenge = this.availableChallenges[ challengeIndex ];
 
