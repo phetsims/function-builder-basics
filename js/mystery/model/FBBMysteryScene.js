@@ -74,7 +74,7 @@ class FBBMysteryScene extends Scene {
 
           // validate challenge
           assert && assert( challenge.length === options.numberOfSlots,
-            'incorrect number of functions in challenge: ' + challenge );
+            `incorrect number of functions in challenge: ${challenge}` );
         }
       } )();
     }
