@@ -6,6 +6,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import FBConstants from '../../function-builder/js/common/FBConstants.js';
 import FBQueryParameters from '../../function-builder/js/common/FBQueryParameters.js';
 import PatternsScreen from '../../function-builder/js/patterns/PatternsScreen.js';
 import TestScreen from '../../function-builder/js/test/TestScreen.js';
@@ -14,16 +15,6 @@ import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import functionBuilderBasicsStrings from './functionBuilderBasicsStrings.js';
 import FBBMysteryScreen from './mystery/FBBMysteryScreen.js';
-
-const options = {
-  credits: {
-    leadDesign: 'Amanda McGarry',
-    softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
-    team: 'Amy Hanson, Karina K. R. Hensberry, Ariel Paul, Kathy Perkins, Sam Reid, Beth Stade, David Webb',
-    qualityAssurance: 'Steele Dalton, Amanda Davis, Bryce Griebenow, Ethan Johnson, Andrea Lin, Ben Roberts, ' +
-                      'Maggie Wiseman'
-  }
-};
 
 simLauncher.launch( () => {
 
@@ -36,6 +27,8 @@ simLauncher.launch( () => {
     screens.push( new TestScreen() );
   }
 
-  const sim = new Sim( functionBuilderBasicsStrings[ 'function-builder-basics' ].title, screens, options );
+  const sim = new Sim( functionBuilderBasicsStrings[ 'function-builder-basics' ].title, screens, {
+    credits: FBConstants.CREDITS
+  } );
   sim.start();
 } );
