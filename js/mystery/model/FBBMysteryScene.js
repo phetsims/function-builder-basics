@@ -10,18 +10,18 @@
 import Property from '../../../../axon/js/Property.js';
 import dotRandom from '../../../../dot/js/dotRandom.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
-import beakerImage from '../../../../function-builder/images/cards/beaker_png.js';
-import butterflyImage from '../../../../function-builder/images/cards/butterfly_png.js';
-import cherriesImage from '../../../../function-builder/images/cards/cherries_png.js';
-import circleImage from '../../../../function-builder/images/cards/circle_png.js';
-import feetImage from '../../../../function-builder/images/cards/feet_png.js';
-import planetImage from '../../../../function-builder/images/cards/planet_png.js';
-import rectangleImage from '../../../../function-builder/images/cards/rectangle_png.js';
-import snowflakeImage from '../../../../function-builder/images/cards/snowflake_png.js';
-import starImage from '../../../../function-builder/images/cards/star_png.js';
-import stickFigureImage from '../../../../function-builder/images/cards/stickFigure_png.js';
-import sunImage from '../../../../function-builder/images/cards/sun_png.js';
-import triangleImage from '../../../../function-builder/images/cards/triangle_png.js';
+import beaker_png from '../../../../function-builder/images/cards/beaker_png.js';
+import butterfly_png from '../../../../function-builder/images/cards/butterfly_png.js';
+import cherries_png from '../../../../function-builder/images/cards/cherries_png.js';
+import circle_png from '../../../../function-builder/images/cards/circle_png.js';
+import feet_png from '../../../../function-builder/images/cards/feet_png.js';
+import planet_png from '../../../../function-builder/images/cards/planet_png.js';
+import rectangle_png from '../../../../function-builder/images/cards/rectangle_png.js';
+import snowflake_png from '../../../../function-builder/images/cards/snowflake_png.js';
+import star_png from '../../../../function-builder/images/cards/star_png.js';
+import stickFigure_png from '../../../../function-builder/images/cards/stickFigure_png.js';
+import sun_png from '../../../../function-builder/images/cards/sun_png.js';
+import triangle_png from '../../../../function-builder/images/cards/triangle_png.js';
 import FBConstants from '../../../../function-builder/js/common/FBConstants.js';
 import FBQueryParameters from '../../../../function-builder/js/common/FBQueryParameters.js';
 import Builder from '../../../../function-builder/js/common/model/builder/Builder.js';
@@ -81,18 +81,18 @@ class FBBMysteryScene extends Scene {
 
     // {HTMLImageElement[]} images for the input cards, in the order that they appear in the carousel
     const cardContent = [
-      feetImage,
-      snowflakeImage,
-      butterflyImage,
-      stickFigureImage,
-      planetImage,
-      sunImage,
-      beakerImage,
-      cherriesImage,
-      rectangleImage,
-      circleImage,
-      triangleImage,
-      starImage
+      feet_png,
+      snowflake_png,
+      butterfly_png,
+      stickFigure_png,
+      planet_png,
+      sun_png,
+      beaker_png,
+      cherries_png,
+      rectangle_png,
+      circle_png,
+      triangle_png,
+      star_png
     ];
 
     // {FunctionCreator[]} function creators, in the order that functions appear in the carousel.
