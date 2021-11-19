@@ -3,11 +3,17 @@
 /**
  * Auto-generated from modulify, DO NOT manually modify.
  */
-
+/* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
 import functionBuilderBasics from './functionBuilderBasics.js';
 
-const functionBuilderBasicsStrings = getStringModule( 'FUNCTION_BUILDER_BASICS' );
+type StringsType = {
+  'function-builder-basics': {
+    'title': string
+  }
+};
+
+const functionBuilderBasicsStrings = getStringModule( 'FUNCTION_BUILDER_BASICS' ) as StringsType;
 
 functionBuilderBasics.register( 'functionBuilderBasicsStrings', functionBuilderBasicsStrings );
 
