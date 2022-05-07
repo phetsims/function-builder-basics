@@ -9,7 +9,7 @@ import functionBuilderBasics from './functionBuilderBasics.js';
 
 type StringsType = {
   'function-builder-basics': {
-    'title': string
+    'title': string;
   }
 };
 
