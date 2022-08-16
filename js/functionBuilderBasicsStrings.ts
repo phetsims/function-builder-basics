@@ -5,11 +5,13 @@
  */
 /* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
+import TReadOnlyProperty from '../../axon/js/TReadOnlyProperty.js';
 import functionBuilderBasics from './functionBuilderBasics.js';
 
 type StringsType = {
   'function-builder-basics': {
     'title': string;
+    'titleProperty': TReadOnlyProperty<string>;
   }
 };
 
