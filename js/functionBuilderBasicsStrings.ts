@@ -11,7 +11,7 @@ import functionBuilderBasics from './functionBuilderBasics.js';
 type StringsType = {
   'function-builder-basics': {
     'title': string;
-    'titleProperty': TReadOnlyProperty<string>;
+    'titleStringProperty': TReadOnlyProperty<string>;
   }
 };
 
