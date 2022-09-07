@@ -11,7 +11,7 @@
 import Property from '../../../axon/js/Property.js';
 import FBColors from '../../../function-builder/js/common/FBColors.js';
 import FBIconFactory from '../../../function-builder/js/common/view/FBIconFactory.js';
-import functionBuilderStrings from '../../../function-builder/js/functionBuilderStrings.js';
+import FunctionBuilderStrings from '../../../function-builder/js/FunctionBuilderStrings.js';
 import Screen from '../../../joist/js/Screen.js';
 import functionBuilderBasics from '../functionBuilderBasics.js';
 import FBBMysteryModel from './model/FBBMysteryModel.js';
@@ -25,7 +25,7 @@ class FBBMysteryScreen extends Screen {
   constructor( tandem ) {
 
     const options = {
-      name: functionBuilderStrings.screen.mystery,
+      name: FunctionBuilderStrings.screen.mystery,
       backgroundColorProperty: new Property( FBColors.MYSTERY_SCREEN_BACKGROUND ),
       homeScreenIcon: FBIconFactory.createMysteryScreenIcon( {
         functionFill: 'white',

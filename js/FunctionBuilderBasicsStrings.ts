@@ -15,8 +15,8 @@ type StringsType = {
   }
 };
 
-const functionBuilderBasicsStrings = getStringModule( 'FUNCTION_BUILDER_BASICS' ) as StringsType;
+const FunctionBuilderBasicsStrings = getStringModule( 'FUNCTION_BUILDER_BASICS' ) as StringsType;
 
-functionBuilderBasics.register( 'functionBuilderBasicsStrings', functionBuilderBasicsStrings );
+functionBuilderBasics.register( 'FunctionBuilderBasicsStrings', FunctionBuilderBasicsStrings );
 
-export default functionBuilderBasicsStrings;
+export default FunctionBuilderBasicsStrings;

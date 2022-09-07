@@ -13,7 +13,7 @@ import TestScreen from '../../function-builder/js/test/TestScreen.js';
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
-import functionBuilderBasicsStrings from './functionBuilderBasicsStrings.js';
+import FunctionBuilderBasicsStrings from './FunctionBuilderBasicsStrings.js';
 import FBBMysteryScreen from './mystery/FBBMysteryScreen.js';
 
 simLauncher.launch( () => {
@@ -27,7 +27,7 @@ simLauncher.launch( () => {
     screens.push( new TestScreen() );
   }
 
-  const sim = new Sim( functionBuilderBasicsStrings[ 'function-builder-basics' ].titleStringProperty, screens, {
+  const sim = new Sim( FunctionBuilderBasicsStrings[ 'function-builder-basics' ].titleStringProperty, screens, {
     credits: FBConstants.CREDITS
   } );
   sim.start();
