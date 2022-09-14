@@ -25,7 +25,7 @@ class FBBMysteryScreen extends Screen {
   constructor( tandem ) {
 
     const options = {
-      name: FunctionBuilderStrings.screen.mystery,
+      name: FunctionBuilderStrings.screen.mysteryStringProperty,
       backgroundColorProperty: new Property( FBColors.MYSTERY_SCREEN_BACKGROUND ),
       homeScreenIcon: FBIconFactory.createMysteryScreenIcon( {
         functionFill: 'white',
