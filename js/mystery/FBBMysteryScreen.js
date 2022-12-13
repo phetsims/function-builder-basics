@@ -1,5 +1,6 @@
 // Copyright 2017-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * The 'Mystery' screen in 'Function Builder: Basics'.
  * This screen differs significantly from the Mystery screen in Function Builder.
