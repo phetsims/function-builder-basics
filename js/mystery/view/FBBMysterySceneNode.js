@@ -154,11 +154,11 @@ class FBBMysterySceneNode extends SceneNode {
    *
    * @param {Scene} scene
    * @param {Object} [containerOptions] - see CardContainer options
-   * @returns {CardContainer[]}
+   * @returns {CarouselItem[]}
    * @protected
    * @override
    */
-  createCardContainers( scene, containerOptions ) {
+  createCardCarouselItems( scene, containerOptions ) {
     const containers = [];
     scene.cardContent.forEach( cardImage => {
       containers.push( {
