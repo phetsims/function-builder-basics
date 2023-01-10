@@ -161,7 +161,9 @@ class FBBMysterySceneNode extends SceneNode {
   createCardContainers( scene, containerOptions ) {
     const containers = [];
     scene.cardContent.forEach( cardImage => {
-      containers.push( new CardContainer( ImageCard, ImageCardNode, cardImage, containerOptions ) );
+      containers.push( {
+        createNode: tandem => new CardContainer( ImageCard, ImageCardNode, cardImage, containerOptions )
+      } );
     } );
     return containers;
   }
