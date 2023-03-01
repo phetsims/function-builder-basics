@@ -247,7 +247,7 @@ class FBBMysterySceneNode extends SceneNode {
     this.resetChallengeControls();
 
     // show the answer for debugging
-    this.answerNode.text = answerText;
+    this.answerNode.string = answerText;
     this.answerNode.centerX = this.builderNode.centerX;
 
     if ( FBQueryParameters.populateOutput ) {
