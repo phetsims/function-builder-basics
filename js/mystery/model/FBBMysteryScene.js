@@ -27,7 +27,7 @@ import FBQueryParameters from '../../../../function-builder/js/common/FBQueryPar
 import Builder from '../../../../function-builder/js/common/model/builder/Builder.js';
 import FunctionCreator from '../../../../function-builder/js/common/model/functions/FunctionCreator.js';
 import Scene from '../../../../function-builder/js/common/model/Scene.js';
-import FBIconFactory from '../../../../function-builder/js/common/view/FBIconFactory.js';
+import FBIconFactory from '../../../../function-builder/js/common/view/FBIconFactory.js'; // eslint-disable-line no-view-imported-from-model
 import MysteryChallenges from '../../../../function-builder/js/mystery/model/MysteryChallenges.js';
 import Erase from '../../../../function-builder/js/patterns/model/functions/Erase.js';
 import Grayscale from '../../../../function-builder/js/patterns/model/functions/Grayscale.js';
