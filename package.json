@@ -25,7 +25,11 @@
       "adapted-from-phet"
     ],
     "simulation": true,
-    "supportsOutputJS": true
+    "supportsOutputJS": true,
+    "screenNameKeys": [
+      "FUNCTION_BUILDER/screen.patterns",
+      "FUNCTION_BUILDER/screen.mystery"
+    ]
   },
   "eslintConfig": {
     "extends": "../chipper/eslint/sim_eslintrc.js"
