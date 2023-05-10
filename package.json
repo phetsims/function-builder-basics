@@ -29,7 +29,11 @@
     "simFeatures": {
       "supportsDynamicLocale": true
     },
-    "published": true
+    "published": true,
+    "screenNameKeys": [
+      "FUNCTION_BUILDER/screen.patterns",
+      "FUNCTION_BUILDER/screen.mystery"
+    ]
   },
   "eslintConfig": {
     "extends": "../chipper/eslint/sim_eslintrc.js",
