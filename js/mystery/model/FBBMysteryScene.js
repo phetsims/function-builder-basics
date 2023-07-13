@@ -26,7 +26,7 @@ import FBConstants from '../../../../function-builder/js/common/FBConstants.js';
 import FBQueryParameters from '../../../../function-builder/js/common/FBQueryParameters.js';
 import Builder from '../../../../function-builder/js/common/model/builder/Builder.js';
 import FunctionCreator from '../../../../function-builder/js/common/model/functions/FunctionCreator.js';
-import Scene from '../../../../function-builder/js/common/model/Scene.js';
+import FBScene from '../../../../function-builder/js/common/model/FBScene.js';
 import FBIconFactory from '../../../../function-builder/js/common/view/FBIconFactory.js'; // eslint-disable-line no-view-imported-from-model
 import MysteryChallenges from '../../../../function-builder/js/mystery/model/MysteryChallenges.js';
 import Erase from '../../../../function-builder/js/patterns/model/functions/Erase.js';
@@ -41,7 +41,7 @@ import Warhol from '../../../../function-builder/js/patterns/model/functions/War
 import merge from '../../../../phet-core/js/merge.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
 
-export default class FBBMysteryScene extends Scene {
+export default class FBBMysteryScene extends FBScene {
 
   /**
    * @param {ImageFunction[][]} challengePool
@@ -108,7 +108,7 @@ export default class FBBMysteryScene extends Scene {
       new FunctionCreator( Warhol )
     ];
 
-    const builderWidth = Scene.computeBuilderWidth( options.numberOfSlots );
+    const builderWidth = FBScene.computeBuilderWidth( options.numberOfSlots );
     const builderX = ( FBConstants.SCREEN_VIEW_LAYOUT_BOUNDS.width / 2 ) - ( builderWidth / 2 );
     const builder = new Builder( {
       numberOfSlots: options.numberOfSlots,
