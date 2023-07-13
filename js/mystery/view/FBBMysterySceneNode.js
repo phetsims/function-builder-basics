@@ -13,7 +13,7 @@ import FBQueryParameters from '../../../../function-builder/js/common/FBQueryPar
 import ImageCard from '../../../../function-builder/js/common/model/cards/ImageCard.js';
 import ImageCardNode from '../../../../function-builder/js/common/view/cards/ImageCardNode.js';
 import CardContainer from '../../../../function-builder/js/common/view/containers/CardContainer.js';
-import SceneNode from '../../../../function-builder/js/common/view/SceneNode.js';
+import FBSceneNode from '../../../../function-builder/js/common/view/FBSceneNode.js';
 import merge from '../../../../phet-core/js/merge.js';
 import EyeToggleButton from '../../../../scenery-phet/js/buttons/EyeToggleButton.js';
 import RefreshButton from '../../../../scenery-phet/js/buttons/RefreshButton.js';
@@ -25,7 +25,7 @@ import FBBMysteryFunctionNode from './FBBMysteryFunctionNode.js';
 // constants
 const QUESTION_MARK_COLORS = [ 'red', 'rgb( 0, 170, 255 )', 'green', 'orange', 'magenta' ];
 
-export default class FBBMysterySceneNode extends SceneNode {
+export default class FBBMysterySceneNode extends FBSceneNode {
 
   /**
    * @param {MysteryScene} scene - model for this scene
