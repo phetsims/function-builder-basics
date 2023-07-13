@@ -11,7 +11,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
 import FBBMysterySceneNode from './FBBMysterySceneNode.js';
 
-class FBBMysteryScreenView extends FBScreenView {
+export default class FBBMysteryScreenView extends FBScreenView {
 
   /**
    * @param {MysteryModel} model
@@ -28,4 +28,3 @@ class FBBMysteryScreenView extends FBScreenView {
 }
 
 functionBuilderBasics.register( 'FBBMysteryScreenView', FBBMysteryScreenView );
-export default FBBMysteryScreenView;

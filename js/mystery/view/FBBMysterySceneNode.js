@@ -25,7 +25,7 @@ import FBBMysteryFunctionNode from './FBBMysteryFunctionNode.js';
 // constants
 const QUESTION_MARK_COLORS = [ 'red', 'rgb( 0, 170, 255 )', 'green', 'orange', 'magenta' ];
 
-class FBBMysterySceneNode extends SceneNode {
+export default class FBBMysterySceneNode extends SceneNode {
 
   /**
    * @param {MysteryScene} scene - model for this scene
@@ -315,4 +315,3 @@ class FBBMysterySceneNode extends SceneNode {
 }
 
 functionBuilderBasics.register( 'FBBMysterySceneNode', FBBMysterySceneNode );
-export default FBBMysterySceneNode;

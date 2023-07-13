@@ -41,7 +41,7 @@ import Warhol from '../../../../function-builder/js/patterns/model/functions/War
 import merge from '../../../../phet-core/js/merge.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
 
-class FBBMysteryScene extends Scene {
+export default class FBBMysteryScene extends Scene {
 
   /**
    * @param {ImageFunction[][]} challengePool
@@ -188,4 +188,3 @@ class FBBMysteryScene extends Scene {
 }
 
 functionBuilderBasics.register( 'FBBMysteryScene', FBBMysteryScene );
-export default FBBMysteryScene;

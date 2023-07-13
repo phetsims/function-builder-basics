@@ -13,7 +13,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import { Text } from '../../../../scenery/js/imports.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
 
-class FBBMysteryFunctionNode extends ImageFunctionNode {
+export default class FBBMysteryFunctionNode extends ImageFunctionNode {
   /**
    * @param {MathFunction} functionInstance
    * @param {FunctionContainer} container - container in the function carousel
@@ -55,4 +55,3 @@ class FBBMysteryFunctionNode extends ImageFunctionNode {
 }
 
 functionBuilderBasics.register( 'FBBMysteryFunctionNode', FBBMysteryFunctionNode );
-export default FBBMysteryFunctionNode;
