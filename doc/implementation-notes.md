@@ -7,4 +7,4 @@ Files for the Mystery screen have a 'FBB' prefix (for "Function Builder: Basics"
 similar files in Function Builder.
 
 For details on the implementation of Function Builder,
-see https://github.com/phetsims/function-builder/blob/master/doc/implementation-notes.md.
+see https://github.com/phetsims/function-builder/blob/main/doc/implementation-notes.md.
