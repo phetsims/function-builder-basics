@@ -35,8 +35,8 @@ export default class FBBMysteryScreen extends Screen<FBBMysteryModel, FBBMystery
     };
 
     super(
-      () => new FBBMysteryModel(),
-      model => new FBBMysteryScreenView( model ),
+      () => new FBBMysteryModel( options.tandem.createTandem( 'model' ) ),
+      model => new FBBMysteryScreenView( model, options.tandem.createTandem( 'view' ) ),
       options
     );
   }

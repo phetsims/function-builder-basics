@@ -7,23 +7,26 @@
  */
 
 import FBScreenView from '../../../../function-builder/js/common/view/FBScreenView.js';
-import merge from '../../../../phet-core/js/merge.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
+import FBBMysteryModel from '../model/FBBMysteryModel.js';
 import FBBMysterySceneNode from './FBBMysterySceneNode.js';
 
 export default class FBBMysteryScreenView extends FBScreenView {
 
   /**
-   * @param {MysteryModel} model
-   * @param {Object} [options]
+   * @param {FBBMysteryModel} model
+   * @param {Tandem} tandem
    */
-  constructor( model, options ) {
+  constructor( model, tandem ) {
 
-    options = merge( {
-      sceneRadioButtonGroupYOffset: 535 // offset of SceneRadioButtonGroup from top of screen
-    }, options );
+    assert && assert( model instanceof FBBMysteryModel );
+    assert && assert( tandem instanceof Tandem );
 
-    super( model, FBBMysterySceneNode, options );
+    super( model, FBBMysterySceneNode, {
+      sceneRadioButtonGroupYOffset: 535, // offset of SceneRadioButtonGroup from top of screen
+      tandem: tandem
+    } );
   }
 }
 

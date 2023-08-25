@@ -10,10 +10,11 @@ import FBModel from '../../../../function-builder/js/common/model/FBModel.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
 import FBBMysteryChallenges from './FBBMysteryChallenges.js';
 import FBBMysteryScene from './FBBMysteryScene.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 
 export default class FBBMysteryModel extends FBModel {
 
-  public constructor() {
+  public constructor( tandem: Tandem ) {
     super( [
       new FBBMysteryScene( FBBMysteryChallenges.POOL1, { numberOfSlots: 1 } ),
       new FBBMysteryScene( FBBMysteryChallenges.POOL2, { numberOfSlots: 2 } ),
