@@ -13,7 +13,7 @@ import FBBMysteryScene from './FBBMysteryScene.js';
 
 export default class FBBMysteryModel extends FBModel {
 
-  constructor() {
+  public constructor() {
     super( [
       new FBBMysteryScene( FBBMysteryChallenges.POOL1, { numberOfSlots: 1 } ),
       new FBBMysteryScene( FBBMysteryChallenges.POOL2, { numberOfSlots: 2 } ),
