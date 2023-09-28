@@ -8,7 +8,6 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../axon/js/Property.js';
 import FBColors from '../../../function-builder/js/common/FBColors.js';
 import FBIconFactory from '../../../function-builder/js/common/view/FBIconFactory.js';
 import FunctionBuilderStrings from '../../../function-builder/js/FunctionBuilderStrings.js';
@@ -26,7 +25,7 @@ export default class FBBMysteryScreen extends Screen<FBBMysteryModel, FBBMystery
 
       // ScreenOptions
       name: FunctionBuilderStrings.screen.mysteryStringProperty,
-      backgroundColorProperty: new Property( FBColors.MYSTERY_SCREEN_BACKGROUND ),
+      backgroundColorProperty: FBColors.mysteryScreenBackgroundColorProperty,
       homeScreenIcon: FBIconFactory.createMysteryScreenIcon( {
         functionFill: 'white',
         questionMarkFill: 'red'
