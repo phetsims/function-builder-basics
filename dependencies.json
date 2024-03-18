@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "function-builder-basics": {
-    "sha": "5a3bc016eb5ee618846f48837c2bd3d961868ebe",
+    "sha": "936254aa240859c8663e4524bbfd75aa1bbb7648",
     "branch": "1.2"
   },
   "joist": {
@@ -57,7 +57,7 @@
     "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "1e5bbff13c126e0f08cb8885fb6d22ba612569bb",
+    "sha": "12fcba85fceaca356eb5289cb4fe163a9afe845d",
     "branch": "HEAD"
   },
   "phetmarks": {
