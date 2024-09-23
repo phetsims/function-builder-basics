@@ -10,12 +10,12 @@ import FBConstants from '../../function-builder/js/common/FBConstants.js';
 import FBQueryParameters from '../../function-builder/js/common/FBQueryParameters.js';
 import PatternsScreen from '../../function-builder/js/patterns/PatternsScreen.js';
 import TestScreen from '../../function-builder/js/test/TestScreen.js';
+import { AnyScreen } from '../../joist/js/Screen.js';
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import FunctionBuilderBasicsStrings from './FunctionBuilderBasicsStrings.js';
 import FBBMysteryScreen from './mystery/FBBMysteryScreen.js';
-import { AnyScreen } from '../../joist/js/Screen.js';
 
 simLauncher.launch( () => {
 
