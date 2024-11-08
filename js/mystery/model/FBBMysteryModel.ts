@@ -7,10 +7,10 @@
  */
 
 import FBModel from '../../../../function-builder/js/common/model/FBModel.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
 import FBBMysteryChallenges from './FBBMysteryChallenges.js';
 import FBBMysteryScene from './FBBMysteryScene.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 
 export default class FBBMysteryModel extends FBModel {
 

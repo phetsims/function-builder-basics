@@ -25,8 +25,8 @@ import triangle_png from '../../../../function-builder/images/cards/triangle_png
 import FBConstants from '../../../../function-builder/js/common/FBConstants.js';
 import FBQueryParameters from '../../../../function-builder/js/common/FBQueryParameters.js';
 import Builder from '../../../../function-builder/js/common/model/builder/Builder.js';
-import FunctionCreator from '../../../../function-builder/js/common/model/functions/FunctionCreator.js';
 import FBScene from '../../../../function-builder/js/common/model/FBScene.js';
+import FunctionCreator from '../../../../function-builder/js/common/model/functions/FunctionCreator.js';
 import FBIconFactory from '../../../../function-builder/js/common/view/FBIconFactory.js'; // eslint-disable-line phet/no-view-imported-from-model
 import MysteryChallenges from '../../../../function-builder/js/mystery/model/MysteryChallenges.js';
 import Erase from '../../../../function-builder/js/patterns/model/functions/Erase.js';
