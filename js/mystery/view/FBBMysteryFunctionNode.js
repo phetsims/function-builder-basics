@@ -10,7 +10,7 @@ import FBConstants from '../../../../function-builder/js/common/FBConstants.js';
 import ImageFunctionNode from '../../../../function-builder/js/common/view/functions/ImageFunctionNode.js';
 import FunctionBuilderStrings from '../../../../function-builder/js/FunctionBuilderStrings.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { Text } from '../../../../scenery/js/imports.js';
+import Text from '../../../../scenery/js/nodes/Text.js';
 import functionBuilderBasics from '../../functionBuilderBasics.js';
 
 export default class FBBMysteryFunctionNode extends ImageFunctionNode {
