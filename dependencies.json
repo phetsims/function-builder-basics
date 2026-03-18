@@ -9,7 +9,7 @@
     "branch": "HEAD"
   },
   "brand": {
-    "sha": "ad5c51a1582bcda8fac37f6090c2eff09988f42b",
+    "sha": "ff1993d26d595463993ce24e3daabc46b42596c9",
     "branch": "HEAD"
   },
   "chipper": {
@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "function-builder-basics": {
-    "sha": "1663e28281040569e0a7ec01964ab47ce03511a2",
+    "sha": "7a798523befc8bbae1994487a2d43e60e9ac4a80",
     "branch": "1.2"
   },
   "joist": {
