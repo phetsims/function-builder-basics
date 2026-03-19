@@ -19,7 +19,6 @@ import EyeToggleButton from '../../../../scenery-phet/js/buttons/EyeToggleButton
 import RefreshButton from '../../../../scenery-phet/js/buttons/RefreshButton.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
-import functionBuilderBasics from '../../functionBuilderBasics.js';
 import FBBMysteryFunctionNode from './FBBMysteryFunctionNode.js';
 
 // constants
@@ -313,5 +312,3 @@ export default class FBBMysterySceneNode extends FBSceneNode {
     return colors;
   }
 }
-
-functionBuilderBasics.register( 'FBBMysterySceneNode', FBBMysterySceneNode );

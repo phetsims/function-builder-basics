@@ -39,7 +39,6 @@ import Rotate90 from '../../../../function-builder/js/patterns/model/functions/R
 import Shrink from '../../../../function-builder/js/patterns/model/functions/Shrink.js';
 import Warhol from '../../../../function-builder/js/patterns/model/functions/Warhol.js';
 import merge from '../../../../phet-core/js/merge.js';
-import functionBuilderBasics from '../../functionBuilderBasics.js';
 
 export default class FBBMysteryScene extends FBScene {
 
@@ -186,5 +185,3 @@ export default class FBBMysteryScene extends FBScene {
     this.challengeProperty.set( challenge );
   }
 }
-
-functionBuilderBasics.register( 'FBBMysteryScene', FBBMysteryScene );

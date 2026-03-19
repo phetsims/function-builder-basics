@@ -16,7 +16,6 @@ import Rotate180 from '../../../../function-builder/js/patterns/model/functions/
 import Rotate90 from '../../../../function-builder/js/patterns/model/functions/Rotate90.js';
 import Shrink from '../../../../function-builder/js/patterns/model/functions/Shrink.js';
 import Warhol from '../../../../function-builder/js/patterns/model/functions/Warhol.js';
-import functionBuilderBasics from '../../functionBuilderBasics.js';
 
 // function modules
 
@@ -97,5 +96,4 @@ const FBBMysteryChallenges = {
   ]
 };
 
-functionBuilderBasics.register( 'FBBMysteryChallenges', FBBMysteryChallenges );
 export default FBBMysteryChallenges;

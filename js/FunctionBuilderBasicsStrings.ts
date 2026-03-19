@@ -19,6 +19,4 @@ type StringsType = {
 
 const FunctionBuilderBasicsStrings = getStringModule( 'FUNCTION_BUILDER_BASICS' ) as StringsType;
 
-functionBuilderBasics.register( 'FunctionBuilderBasicsStrings', FunctionBuilderBasicsStrings );
-
 export default FunctionBuilderBasicsStrings;
