@@ -1,4 +1,4 @@
-// Copyright 2017-2020, University of Colorado Boulder
+// Copyright 2017-2026, University of Colorado Boulder
 
 /**
  * Challenges for the 'Mystery' screen in 'Function Builder: Basics'.
