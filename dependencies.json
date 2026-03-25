@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "function-builder-basics": {
-    "sha": "9381bf402b97b6c2aed3d50d327c0d49d3ca9f3b",
+    "sha": "42d156b8ee8940163ed103380d63288a40a5e769",
     "branch": "1.2"
   },
   "joist": {
@@ -69,7 +69,7 @@
     "branch": "HEAD"
   },
   "scenery": {
-    "sha": "7c4c8e5ed7609e6ab44dee2cb1797f3656a282f7",
+    "sha": "d340c5d0c1d06103f7dcdf518a9f8efb95940981",
     "branch": "HEAD"
   },
   "scenery-phet": {
